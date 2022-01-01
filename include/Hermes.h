@@ -14,7 +14,7 @@ Testd on:    Raspberry Pi OS
 *	Include                             *
 ****************************************/
 
-#include "lib/Artic42.h"
+#include "Artic42.h"
 
 /****************************************
 *	Public Function Prototype           * 

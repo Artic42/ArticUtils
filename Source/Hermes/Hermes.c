@@ -16,11 +16,11 @@ Tested on:    Raspberry Pi OS and wsl2
 #include <unistd.h>
 #include <stdio.h>
 
-#include "lib/Artic42.h"
+#include "Artic42.h"
 #include "Hermes.h"
 
 /****************************************
-*	Private Function Prtotype           *
+*	Private Function Prototype           *
 ****************************************/
 
 
@@ -61,13 +61,13 @@ void deleteFile (string path)
     system (command);
 }
 
-void bool2file (string  path, bool value)
+void bool2file (string  path, boolean value)
 {
     if (value) { createFile (path);}
     else       { deleteFile (path);}
 }
 
-bool file2bool (string path)
+boolean file2bool (string path)
 {
     if (access (path, F_OK) == FILES_EXIST) { return 1; }
     else                                    { return 0; }

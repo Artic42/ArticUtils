@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jan  2 01:00:02 2022
+# Make data base, printed on Sun Jan  2 15:18:28 2022
 
 # Variables
 
@@ -161,7 +161,7 @@ VSCODE_EXTHOST_WILL_SEND_SOCKET = true
 # environment
 WSL_DISTRO_NAME = Ubuntu-20.04
 # variable set hash-table stats:
-# Load=75/1024=7%, Rehash=0, Collisions=4/100=4%
+# Load=75/1024=7%, Rehash=0, Collisions=4/107=4%
 
 # Pattern-specific Variable Values
 
@@ -169,9 +169,9 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 
 # Directories
 
-# . (device 2064, inode 46167): 12 files, no impossibilities.
+# . (device 2064, inode 46167): 13 files, no impossibilities.
 
-# 12 files, no impossibilities in 1 directories.
+# 13 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -179,90 +179,165 @@ WSL_DISTRO_NAME = Ubuntu-20.04
 
 # Files
 
-Source/Artic42/bin/IntegerFunctions_D.o: Source/Artic42/IntegerFunctions.c
+lib/c-cpp/Artic42_D.lib: bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-01-02 00:51:43.6
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 32):
-	$(CC) $(OFLAGSD) $(IPATH) Source/Artic42/IntegerFunctions.c -o Source/Artic42/bin/IntegerFunctions_D.o
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 38):
+	ar cr lib/c-cpp/Artic42_D.lib bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o
+	rm -f bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o
 
-Artic42_R: lib/Artic42.lib
+lib/python/sendEmail.py: src/herald/sendEmail.py
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 46):
+	cp -f src/herald/sendEmail.py lib/python/sendEmail.py
+
+hermes_py: lib/python/hermes.py
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Artic42_R: lib/c-cpp/Artic42.lib
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
 
-lib/Artic42_D.lib: Source/Artic42/bin/CharacterFunctions_D.o Source/Artic42/bin/IntegerFunctions_D.o
+# Not a target:
+src/pythonLib/modifyFile.py:
 #  Implicit rule search has not been done.
-#  Last modified 2022-01-02 00:55:38.7
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 35):
-	ar cr lib/Artic42_D.lib Source/Artic42/bin/CharacterFunctions_D.o Source/Artic42/bin/IntegerFunctions_D.o
+#  Modification time never checked.
+#  File has not been updated.
 
-all: Artic42 Hermes
+lib/python/hermes.py: src/hermes/hermes.py
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 76):
+	cp src/hermes/hermes.py lib/python/hermes.py
+
+all: Artic42 hermes herald pythonLib
 #  Command line target.
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
 
-Artic42_D: lib/Artic42_D.lib
-#  Implicit rule search has been done.
-#  File does not exist.
-#  File has been updated.
-#  Successfully updated.
-
-Source/Artic42/bin/CharacterFunctions_D.o: Source/Artic42/CharacterFunctions.c
+# Not a target:
+src/herald/herald.py:
 #  Implicit rule search has not been done.
-#  Last modified 2022-01-02 00:51:43.58
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 29):
-	$(CC) $(OFLAGSD) $(IPATH) Source/Artic42/CharacterFunctions.c -o Source/Artic42/bin/CharacterFunctions_D.o
+#  Modification time never checked.
+#  File has not been updated.
 
-Hermes_R: lib/Hermes.lib
+# Not a target:
+src/hermes/bin/hermesTest.app:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/Artic42/IntegerFunctions.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Artic42_D: lib/c-cpp/Artic42_D.lib
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+bin/IntegerFunctions_D.o: src/Artic42/IntegerFunctions.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 35):
+	$(CC) $(OFLAGSD) $(IPATH) src/Artic42/IntegerFunctions.c -o bin/IntegerFunctions_D.o
+
+# Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+hermes_R: lib/c-cpp/hermes.lib
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/Artic42/CharacterFunctions.c:
 #  Implicit rule search has been done.
-#  File does not exist.
+#  Last modified 2022-01-01 22:47:57.49
 #  File has been updated.
 #  Successfully updated.
+ 
+
+# Not a target:
+src/herald/sendEmail.py:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/hermes/test.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-01-02 00:59:38.95
+#  Last modified 2022-01-02 15:17:43.42
 #  File has been updated.
 #  Successfully updated.
 
-Hermes_D: lib/Hermes_D.lib
-#  Implicit rule search has been done.
-#  File does not exist.
-#  File has been updated.
-#  Successfully updated.
-
-lib/Hermes.lib: Source/Hermes/Hermes.c
+lib/python/readExcel.py: src/pythonLib/readExcel.py
 #  Implicit rule search has not been done.
-#  Last modified 2022-01-02 00:55:38.79
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 45):
-	$(CC) $(OFLAGSR) $(IPATH) Source/Hermes/Hermes.c -o lib/Hermes.lib
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 85):
+	cp src/pythonLib/readExcel.py lib/python/readExcel.py
 
-# Not a target:
-Source/Hermes/Hermes.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-01-02 00:21:44.26
-#  File has been updated.
-#  Successfully updated.
-
-Source/Artic42/bin/IntegerFunctions.o: Source/Artic42/IntegerFunctions.c
+hermes_D: lib/c-cpp/hermes_D.lib
 #  Implicit rule search has not been done.
-#  Last modified 2022-01-02 00:50:18.18
+#  Modification time never checked.
+#  File has not been updated.
+
+pythonLib: lib/python/modifyFile.py lib/python/readExcel.py
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+bin/CharacterFunctions_D.o: src/Artic42/CharacterFunctions.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 32):
+	$(CC) $(OFLAGSD) $(IPATH) src/Artic42/CharacterFunctions.c -o bin/CharacterFunctions_D.o
+
+lib/c-cpp/hermes.lib: src/hermes/hermes.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 65):
+	$(CC) $(OFLAGSR) $(IPATH) src/hermes/hermes.c -o lib/c-cpp/hermes.lib
+
+lib/c-cpp/Artic42.lib: bin/CharacterFunctions.o bin/IntegerFunctions.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-01-02 15:18:00.56
 #  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 23):
-	$(CC) $(OFLAGSR) $(IPATH) Source/Artic42/IntegerFunctions.c -o Source/Artic42/bin/IntegerFunctions.o
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
+#  recipe to execute (from 'makefile', line 28):
+	ar cr lib/c-cpp/Artic42.lib bin/CharacterFunctions.o bin/IntegerFunctions.o
+	rm -f bin/CharacterFunctions.o bin/IntegerFunctions.o
 
 # Not a target:
 .DEFAULT:
@@ -270,92 +345,162 @@ Source/Artic42/bin/IntegerFunctions.o: Source/Artic42/IntegerFunctions.c
 #  Modification time never checked.
 #  File has not been updated.
 
-lib/Artic42.lib: Source/Artic42/bin/CharacterFunctions.o Source/Artic42/bin/IntegerFunctions.o
+herald: lib/python/sendEmail.py bin/sendEmail.app bin/herald.app
 #  Implicit rule search has not been done.
-#  Last modified 2022-01-02 00:55:38.7
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 26):
-	ar cr lib/Artic42.lib Source/Artic42/bin/CharacterFunctions.o Source/Artic42/bin/IntegerFunctions.o
- 
+#  Modification time never checked.
+#  File has not been updated.
 
 Artic42: Artic42_R Artic42_D
-#  Implicit rule search has been done.
+#  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
+#  recipe to execute (from 'makefile', line 19):
+	cp src/Artic42/Artic42.h include/Artic42.h
 
-Source/Hermes/bin/HermesTest.app: lib/Hermes_D.lib Source/Hermes/test.c
+clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 51):
-	$(CC) $(CFLAGSD) $(IPATH) lib/Hermes_D.lib Source/Hermes/test.c -o Source/Hermes/bin/HermesTest.app
-	givex Source/Hermes/bin/HermesTest.app
-
-Source/Artic42/bin/CharacterFunctions.o: Source/Artic42/CharacterFunctions.c
-#  Implicit rule search has not been done.
-#  Last modified 2022-01-02 00:50:18.16
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 20):
-	$(CC) $(OFLAGSR) $(IPATH) Source/Artic42/CharacterFunctions.c -o Source/Artic42/bin/CharacterFunctions.o
+#  recipe to execute (from 'makefile', line 95):
+	rm -f bin/*.app
+	rm -f lib/c-cpp/*.lib
+	rm -f lib/python/*.py
 
 # Not a target:
-Source/Artic42/IntegerFunctions.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-01-01 22:48:34.12
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-Source/Artic42/CharacterFunctions.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-01-01 22:47:57.49
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-Source/Hermes/test.c:
+src/hermes/hermes.py:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-Hermes: Hermes_D Hermes_R
-#  Implicit rule search has been done.
+bin/herald.app: src/herald/herald.py
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 52):
+	cat pythonInterpreter src/herald/herald.py > bin/herald.app
+
+# Not a target:
+src/pythonLib/readExcel.py:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+lib/python/modifyFile.py: src/pythonLib/modifyFile.py
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 82):
+	cp src/pythonLib/modifyFile.py lib/python/modifyFile.py
+
+bin/IntegerFunctions.o: src/Artic42/IntegerFunctions.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 25):
+	$(CC) $(OFLAGSR) $(IPATH) src/Artic42/IntegerFunctions.c -o bin/IntegerFunctions.o
+
+lib/c-cpp/hermes_D.lib: src/hermes/hermes.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 68):
+	$(CC) $(OFLAGSD) $(IPATH) src/hermes/hermes.c -o lib/c-cpp/hermes_D.lib
+
+bin/sendEmail.app: src/herald/sendEmail.py
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 49):
+	cat pythonInterpreter src/herald/sendEmail.py > bin/sendEmail.app
+
+src/hermes/hermesTest.app: lib/hermes_D.lib src/hermes/test.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 71):
+	$(CC) $(CFLAGSD) $(IPATH) lib/hermes_D.lib src/hermes/test.c -o src/hermes/hermesTest.app
+	./src/hermes/hermesTest.app
+	rm -f src/hermes/hermesTest.app
+
+bin/CharacterFunctions.o: src/Artic42/CharacterFunctions.c
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := bin/CharacterFunctions.o
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := src/Artic42/CharacterFunctions.c
+# automatic
+# | := 
+# automatic
+# < := src/Artic42/CharacterFunctions.c
+# automatic
+# ^ := src/Artic42/CharacterFunctions.c
+# automatic
+# ? := src/Artic42/CharacterFunctions.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/15=7%
+#  recipe to execute (from 'makefile', line 22):
+	$(CC) $(OFLAGSR) $(IPATH) src/Artic42/CharacterFunctions.c -o bin/CharacterFunctions.o
 
-HermesTest: Source/Hermes/bin/HermesTest.app
+hermes: hermes_D hermes_R hermes_py
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 42):
-	Source/Hermes/bin/HermesTest.app
+#  recipe to execute (from 'makefile', line 60):
+	cp src/hermes/hermes.h include/hermes.h
 
-lib/Hermes_D.lib: Source/Hermes/Hermes.c
+hermesTest: src/hermes/bin/hermesTest.app
 #  Implicit rule search has not been done.
-#  Last modified 2022-01-02 00:55:38.75
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'makefile', line 48):
-	$(CC) $(OFLAGSD) $(IPATH) Source/Hermes/Hermes.c -o lib/Hermes_D.lib
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 62):
+	src/hermes/bin/hermesTest.app
+
+# Not a target:
+src/hermes/hermes.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+install: all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 90):
+	cp -r bin ~/bin
+	cp -r include ~/include
+	cp -r lib ~/lib
+
+# Not a target:
+lib/hermes_D.lib:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=24/1024=2%, Rehash=0, Collisions=3/65=5%
+# Load=42/1024=4%, Rehash=0, Collisions=0/107=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 37 / storage = 565 B / avg = 15 B
-# current buf: size = 8162 B / used = 565 B / count = 37 / avg = 15 B
+# strcache buffers: 1 (0) / strings = 56 / storage = 860 B / avg = 15 B
+# current buf: size = 8162 B / used = 860 B / count = 56 / avg = 15 B
 
-# strcache performance: lookups = 78 / hit rate = 52%
+# strcache performance: lookups = 118 / hit rate = 52%
 # hash-table stats:
-# Load=37/8192=0%, Rehash=0, Collisions=1/78=1%
-# Finished Make data base on Sun Jan  2 01:00:02 2022
+# Load=56/8192=1%, Rehash=0, Collisions=1/118=1%
+# Finished Make data base on Sun Jan  2 15:18:28 2022
 
  

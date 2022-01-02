@@ -17,7 +17,7 @@ Tested on:    Raspberry Pi OS and wsl2
 #include <stdio.h>
 
 #include "Artic42.h"
-#include "Hermes.h"
+#include "hermes.h"
 
 /****************************************
 *	Private Function Prototype           *

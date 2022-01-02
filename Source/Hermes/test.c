@@ -15,7 +15,7 @@ Tested on:    Raspberry Pi OS and wsl2
 #include <stdio.h>
 #include <string.h>
 
-#include "lib/Artic42.h"
+#include "Artic42.h"
 #include "Hermes.h"
 
 /****************************************

@@ -38,9 +38,15 @@ lib/Artic42_D.lib: Source/Artic42/bin/CharacterFunctions_D.o Source/Artic42/bin/
 Hermes_R: lib/Hermes.lib
 Hermes_D: lib/Hermes_D.lib
 Hermes: Hermes_D Hermes_R
+HermesTest: Source/Hermes/bin/HermesTest.app
+	Source/Hermes/bin/HermesTest.app
 
 lib/Hermes.lib: Source/Hermes/Hermes.c
 	$(CC) $(OFLAGSR) $(IPATH) Source/Hermes/Hermes.c -o lib/Hermes.lib
 
 lib/Hermes_D.lib: Source/Hermes/Hermes.c
 	$(CC) $(OFLAGSD) $(IPATH) Source/Hermes/Hermes.c -o lib/Hermes_D.lib
+
+Source/Hermes/bin/HermesTest.app: lib/Hermes_D.lib Source/Hermes/test.c
+	$(CC) $(CFLAGSD) $(IPATH) lib/Hermes_D.lib Source/Hermes/test.c -o Source/Hermes/bin/HermesTest.app
+	givex Source/Hermes/bin/HermesTest.app

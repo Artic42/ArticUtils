@@ -49,3 +49,6 @@ def file2string (path):
     value = file.readline ()
     file.close ()
     return value
+
+def char2file (path, value):
+    string2file (path, value)

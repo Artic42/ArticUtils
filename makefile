@@ -90,8 +90,8 @@ lib/python/readExcel.py: src/pythonLib/readExcel.py
 install: all
 	mkdir -p ~/.bin/ ~/.include ~/.lib/
 	cp -rf bin/* ~/.bin/
-	cp -rf include ~/.include
-	cp -rf lib ~/.lib/
+	cp -rf include/* ~/.include/
+	cp -rf lib/* ~/.lib/
 
 clean:
 	rm -f bin/*.app

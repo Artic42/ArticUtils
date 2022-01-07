@@ -11,6 +11,7 @@ IPATH = -Iinclude
 
 all: Artic42 hermes herald pythonLib
 
+
 # Artic42
 
 Artic42_R: lib/c-cpp/Artic42.lib
@@ -87,6 +88,7 @@ lib/python/readExcel.py: src/pythonLib/readExcel.py
 # General
 
 install: all
+	mkdir -p ~/.bin/ ~/.include ~/.lib/
 	cp -rf bin/* ~/.bin/
 	cp -rf include ~/.include
 	cp -rf lib ~/.lib/

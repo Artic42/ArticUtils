@@ -1,7 +1,7 @@
 #Constant definitions
 
 CC = gcc
-CFLAGSR = -Wall -lncurses
+CFLAGSR = -Wall
 CFLAGSD = -g $(CFLAGSR)
 OFLAGSR = -c $(CFLAGSR)
 OFLAGSD = -c $(CFLAGSD)
@@ -59,7 +59,7 @@ hermes_py: lib/python/hermes.py
 hermes: hermes_D hermes_R hermes_py
 	cp src/hermes/hermes.h include/hermes.h
 hermesTest: src/hermes/bin/hermesTest.app
-	src/hermes/bin/hermesTest.app
+
 
 lib/c-cpp/hermes.lib: src/hermes/hermes.c
 	$(CC) $(OFLAGSR) $(IPATH) src/hermes/hermes.c -o lib/c-cpp/hermes.lib
@@ -67,8 +67,8 @@ lib/c-cpp/hermes.lib: src/hermes/hermes.c
 lib/c-cpp/hermes_D.lib: src/hermes/hermes.c
 	$(CC) $(OFLAGSD) $(IPATH) src/hermes/hermes.c -o lib/c-cpp/hermes_D.lib
 
-src/hermes/hermesTest.app: lib/hermes_D.lib src/hermes/test.c
-	$(CC) $(CFLAGSD) $(IPATH) lib/hermes_D.lib src/hermes/test.c -o src/hermes/hermesTest.app
+src/hermes/bin/hermesTest.app: lib/c-cpp/hermes_D.lib src/hermes/test.c
+	$(CC) $(CFLAGSD) $(IPATH) lib/c-cpp/hermes_D.lib src/hermes/test.c -o src/hermes/hermesTest.app
 	./src/hermes/hermesTest.app
 	rm -f src/hermes/hermesTest.app
 

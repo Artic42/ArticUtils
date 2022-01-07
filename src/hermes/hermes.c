@@ -86,9 +86,17 @@ int file2int (string path)
     int result;
     FILE *filePtr = NULL;
     filePtr = fopen (path, "r");
-    fscanf (filePtr, "%d", &result);
-    fclose (filePtr);
-    return result;
+    if (filePtr == NULL)
+    {
+        printf ("File %s couldn't be openned.", path);
+        return -1;
+    }
+    else
+    {
+        fscanf (filePtr, "%d", &result);
+        fclose (filePtr);
+        return result;
+    }
 }
 
 void float2file (string path, float value)
@@ -104,9 +112,17 @@ float file2float (string path)
     float result;
     FILE *filePtr = NULL;
     filePtr = fopen (path, "r");
-    fscanf (filePtr, "%f", &result);
-    fclose (filePtr);
-    return result;
+    if (filePtr == NULL)
+    {
+        printf ("File %s couldn't be openned.", path);
+        return -1;
+    }
+    else
+    {
+        fscanf (filePtr, "%f", &result);
+        fclose (filePtr);
+        return result;
+    }
 }
 
 void string2file (string path, string value)
@@ -122,9 +138,16 @@ void file2print (string path)
     char buffer [20480];
     FILE *filePtr = NULL;
     filePtr = fopen (path, "r");
-    fgets (buffer, 20480, filePtr);
-    printf ("%s \n", buffer);
-    fclose (filePtr);
+    if (filePtr == NULL)
+    {
+        printf ("File %s couldn't be openned.", path);
+    }
+    else
+    {
+        fgets (buffer, 20480, filePtr);
+        printf ("%s \n", buffer);
+        fclose (filePtr);
+    }
 }
 
 void char2file (string path, char value)
@@ -140,6 +163,14 @@ char file2char (string path, int offset)
     char buffer [20480];
     FILE *filePtr = NULL;
     filePtr = fopen (path, "r");
-    fgets (buffer, 20480, filePtr);
-    return buffer [offset];
+    if (filePtr == NULL)
+    {
+        printf ("File %s couldn't be openned.", path);
+        return -1;
+    }
+    else
+    {
+        fgets (buffer, 20480, filePtr);
+        return buffer [offset];
+    }
 }

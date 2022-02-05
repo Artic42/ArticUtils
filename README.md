@@ -15,4 +15,8 @@ This utility allows to store and read variables from files. Includes multiple la
 
 ## PythonLib
 
-Library of python scripts useful for a lot of application necessary for all my python projects
+Library of python scripts useful for a lot of application necessary for all my python projects.
+
+## Thoth
+
+Logger apllication with utilities to later join multiple logs. Usable in C, python and ruby. More info in the folder of the project.

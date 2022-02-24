@@ -85,6 +85,20 @@ lib/python/modifyFile.py: src/pythonLib/modifyFile.py
 lib/python/readExcel.py: src/pythonLib/readExcel.py
 	@cp src/pythonLib/readExcel.py lib/python/readExcel.py
 
+#Thoth
+
+thoth_R: lib/c-cpp/thoth.lib
+thoth_D: lib/c-cpp/thoth_D.lib
+thoth_py: lib/python/thoth.py
+thoth: thoth_D thoth_py thoth_R
+	@cp src/thoth/thoth.h include/thoth.h
+
+lib/c-cpp/thoth.lib: src/thoth/thoth.*
+	@${CC} ${OFLAGSR} ${IPATH} src/thotho/thoth.c -o lib/c-cpp/thoth.lib
+
+lib/c-cpp/thotho_D.lib: src/thoth/thoth.*
+	@${CC} ${OFLAGSD} ${IPATH} src/thotho/thoth.c -o lib/c-cpp/thoth.lib
+
 # General
 
 install: all

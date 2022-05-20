@@ -16,21 +16,14 @@ Tested on:    Raspberry Pi OS and wsl2
 #include "thoth.h"
 
 /****************************************
-*   Structures                          *
-****************************************/
-
-typedef struct {
-    char name[128];
-    int8b mask;
-    FILE *file;
-    log *nxt;
-} log;
-
-/****************************************
 *   Private function prototype          *
 ****************************************/
 
-
+void calculateString (string Message, char mask);
+void addLog2List (log* logPointer);
+void removeLog2List (log* logPointer);
+void openLogFile (log* logPointer);
+void closeLogFile (log* logPointer);
 
 /****************************************
 *   Private global variables            *
@@ -43,15 +36,5 @@ log *last = NULL;
 *   Code                                *
 ****************************************/
 
-void createLog (string name, char logMask, string path)
-{
-    log* tempPtr;
-    tempPtr = malloc (sizeof(log));
-    if (&last == NULL) { first = tempPtr;}
-    else               { last -> nxt = tempPtr;}
-    last = tempPtr;
-    tempPtr->file = fopen (path, 'w');
-    tempPtr->mask = logMask;
-}
 
 

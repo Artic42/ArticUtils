@@ -25,9 +25,12 @@ bin/CharacterFunctions.o: src/Artic42/CharacterFunctions.c
 bin/IntegerFunctions.o: src/Artic42/IntegerFunctions.c
 	@$(CC) $(OFLAGSR) $(IPATH) src/Artic42/IntegerFunctions.c -o bin/IntegerFunctions.o
 
-lib/c-cpp/Artic42.lib: bin/CharacterFunctions.o bin/IntegerFunctions.o
-	@ar cr lib/c-cpp/Artic42.lib bin/CharacterFunctions.o bin/IntegerFunctions.o
-	@rm -f bin/CharacterFunctions.o bin/IntegerFunctions.o
+bin/fileManipulation.o: src/Artic42/fileManipulation.c
+	@$(CC) $(OFLAGSR) $(IPATH) src/Artic42/fileManipulation.c -o bin/fileManipulation.o
+
+lib/c-cpp/Artic42.lib: bin/CharacterFunctions.o bin/IntegerFunctions.o bin/fileManipulation.o
+	@ar cr lib/c-cpp/Artic42.lib bin/CharacterFunctions.o bin/IntegerFunctions.o bin/fileManipulation.o
+	@rm -f bin/CharacterFunctions.o bin/IntegerFunctions.o bin/fileManipulation.o
 
 bin/CharacterFunctions_D.o: src/Artic42/CharacterFunctions.c
 	@$(CC) $(OFLAGSD) $(IPATH) src/Artic42/CharacterFunctions.c -o bin/CharacterFunctions_D.o
@@ -35,9 +38,12 @@ bin/CharacterFunctions_D.o: src/Artic42/CharacterFunctions.c
 bin/IntegerFunctions_D.o: src/Artic42/IntegerFunctions.c
 	@$(CC) $(OFLAGSD) $(IPATH) src/Artic42/IntegerFunctions.c -o bin/IntegerFunctions_D.o
 
-lib/c-cpp/Artic42_D.lib: bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o
-	@ar cr lib/c-cpp/Artic42_D.lib bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o
-	@rm -f bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o
+bin/fileManipulation_D.o: src/Artic42/fileManipulation.c
+	@$(CC) $(OFLAGSD) $(IPATH) src/Artic42/fileManipulation.c -o bin/fileManipulation_D.o
+
+lib/c-cpp/Artic42_D.lib: bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o bin/fileManipulation_D.o
+	@ar cr lib/c-cpp/Artic42_D.lib bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o bin/fileManipulation_D.o
+	@rm -f bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o bin/fileManipulation_D.o
 
 # Herald
 

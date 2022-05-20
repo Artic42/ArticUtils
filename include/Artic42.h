@@ -9,6 +9,7 @@ Description: Header were I include a series of common macros and definitions tha
 #ifndef ARTIC42_H
 #define ARTIC42_H
 
+#include <stdio.h>
 /**************************************
 *   Personal definitions              *
 **************************************/
@@ -50,5 +51,8 @@ boolean isNumberNegative (int number);
 int intAbsolute (int value);
 int intGiveMax (int value1, int value2);
 int intGiveMin (int value1, int value2);
+
+//File manipulation
+void addLine2File (string line, FILE* FP);
 
 #endif

@@ -16,18 +16,31 @@ Tested on:    WSL 2 Debian
 
 #include "Artic42.h"
 
+/****************************************
+*	Public Struct                       * 
+****************************************/
 
+struct log
+{
+    char name [MAX_NAME_LENGTH];
+    char directoryPath [MAX_PATH_LENGTH];
+    FILE *filePointer;
+    char mask;
+    int entriesOnFile;
+    struct log *prvLog;
+    struct log *nxtLog;
+};
 
 /****************************************
 *	Public Function Prototype           * 
 ****************************************/
 
-log* createLog (char name, string path, char mask, int entries);
-char closeLog (log *logPointer);
+struct log *createLog (char name, string path, char mask, int entries);
+void closeLog (struct log* logPointer);
 void closeAllLog (void);
 void addEntry (string Message, char mask);
-void add2Mask (log *logPointer, char mask);
-void del2Mask (log *logPointer, char mask);
+void addMask (struct log* logPointer, char mask);
+void delMask (struct log* logPointer, char mask);
 
 /****************************************
 *	Public Constants                    * 
@@ -47,18 +60,6 @@ void del2Mask (log *logPointer, char mask);
 #define SAFETY_ALARM 0X20
 #define SAFERTY_ERROR 0X40
 
-/****************************************
-*	Public Struct                       * 
-****************************************/
 
-typedef struct {
-    char name [MAX_NAME_LENGTH];
-    char directoryPath [MAX_PATH_LENGTH];
-    FILE *filePointer;
-    char mask;
-    int entriesOnFile;
-    log *prvLog;
-    log *nxtLog
-} log;
 
 #endif

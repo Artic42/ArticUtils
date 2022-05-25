@@ -47,7 +47,6 @@ dateTime getDateTime (void)
 {
     time_t t = time (NULL);
     struct tm T = *localtime (&t);
-
 }
 
 boolean isHigher (dateTime date1, dateTime date2)

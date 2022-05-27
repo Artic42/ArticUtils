@@ -26,6 +26,15 @@ typedef char int8b;
 *	Personal Structures                        *
 ***********************************************/
 
+typedef struct {
+    int year;
+    int8b month;
+    int8b day;
+    int8b hour;
+    int8b min;
+    int8b sec;
+} dateTime;
+
 /************************************************
 *	Private Function Prtotype                   *
 ************************************************/
@@ -54,5 +63,10 @@ int intGiveMin (int value1, int value2);
 
 //File manipulation
 void addLine2File (str line, FILE* FP);
+
+//Date and time
+dateTime getDateTime (void);
+boolean isHigher (dateTime date1, dateTime date2);
+boolean dayIsEqual (dateTime date1, dateTime date2);
 
 #endif

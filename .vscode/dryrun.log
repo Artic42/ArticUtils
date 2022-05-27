@@ -1,24 +1,8 @@
-make --dry-run --always-make --keep-going --print-directory
+make clean --dry-run --keep-going --print-directory
 make: Entering directory '/home/artic/ArticUtils'
-gcc -c -Wall -Iinclude src/Artic42/CharacterFunctions.c -o bin/CharacterFunctions.o
-gcc -c -Wall -Iinclude src/Artic42/IntegerFunctions.c -o bin/IntegerFunctions.o
-gcc -c -Wall -Iinclude src/Artic42/fileManipulation.c -o bin/fileManipulation.o
-ar cr lib/c-cpp/Artic42.lib bin/CharacterFunctions.o bin/IntegerFunctions.o bin/fileManipulation.o
-rm -f bin/CharacterFunctions.o bin/IntegerFunctions.o bin/fileManipulation.o
-gcc -c -g -Wall -Iinclude src/Artic42/CharacterFunctions.c -o bin/CharacterFunctions_D.o
-gcc -c -g -Wall -Iinclude src/Artic42/IntegerFunctions.c -o bin/IntegerFunctions_D.o
-gcc -c -g -Wall -Iinclude src/Artic42/fileManipulation.c -o bin/fileManipulation_D.o
-ar cr lib/c-cpp/Artic42_D.lib bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o bin/fileManipulation_D.o
-rm -f bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o bin/fileManipulation_D.o
-cp src/Artic42/Artic42.h include/Artic42.h
-gcc -c -g -Wall -Iinclude src/hermes/hermes.c -o lib/c-cpp/hermes_D.lib
-gcc -c -Wall -Iinclude src/hermes/hermes.c -o lib/c-cpp/hermes.lib
-cp src/hermes/hermes.py lib/python/hermes.py
-cp src/hermes/hermes.h include/hermes.h
-cp -f src/herald/sendEmail.py lib/python/sendEmail.py
-cat pythonInterpreter src/herald/sendEmail.py > bin/sendEmail.app
-cat pythonInterpreter src/herald/herald.py > bin/herald.app
-cp src/pythonLib/modifyFile.py lib/python/modifyFile.py
-cp src/pythonLib/readExcel.py lib/python/readExcel.py
+rm -f bin/*.app
+rm -f lib/c-cpp/*.lib
+rm -f lib/python/*.py
+ 
 make: Leaving directory '/home/artic/ArticUtils'
  

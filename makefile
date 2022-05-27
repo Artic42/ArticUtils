@@ -28,9 +28,12 @@ bin/IntegerFunctions.o: src/Artic42/IntegerFunctions.c
 bin/fileManipulation.o: src/Artic42/fileManipulation.c
 	@$(CC) $(OFLAGSR) $(IPATH) src/Artic42/fileManipulation.c -o bin/fileManipulation.o
 
-lib/c-cpp/Artic42.lib: bin/CharacterFunctions.o bin/IntegerFunctions.o bin/fileManipulation.o
-	@ar cr lib/c-cpp/Artic42.lib bin/CharacterFunctions.o bin/IntegerFunctions.o bin/fileManipulation.o
-	@rm -f bin/CharacterFunctions.o bin/IntegerFunctions.o bin/fileManipulation.o
+bin/dateTime.o: src/Artic42/dateTime.c
+	@$(CC) $(OFLAGSR) $(IPATH) src/Artic42/dateTime.c -o bin/dateTime.o
+
+lib/c-cpp/Artic42.lib: bin/CharacterFunctions.o bin/IntegerFunctions.o bin/fileManipulation.o bin/dateTime.o
+	@ar cr lib/c-cpp/Artic42.lib bin/CharacterFunctions.o bin/IntegerFunctions.o bin/fileManipulation.o bin/dateTime.o
+	@rm -f bin/CharacterFunctions.o bin/IntegerFunctions.o bin/fileManipulation.o bin/dateTime.o
 
 bin/CharacterFunctions_D.o: src/Artic42/CharacterFunctions.c
 	@$(CC) $(OFLAGSD) $(IPATH) src/Artic42/CharacterFunctions.c -o bin/CharacterFunctions_D.o
@@ -40,10 +43,13 @@ bin/IntegerFunctions_D.o: src/Artic42/IntegerFunctions.c
 
 bin/fileManipulation_D.o: src/Artic42/fileManipulation.c
 	@$(CC) $(OFLAGSD) $(IPATH) src/Artic42/fileManipulation.c -o bin/fileManipulation_D.o
+	
+bin/dateTime_D.o: src/Artic42/dateTime.c
+	@$(CC) $(OFLAGSR) $(IPATH) src/Artic42/dateTime.c -o bin/dateTime_D.o
 
-lib/c-cpp/Artic42_D.lib: bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o bin/fileManipulation_D.o
-	@ar cr lib/c-cpp/Artic42_D.lib bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o bin/fileManipulation_D.o
-	@rm -f bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o bin/fileManipulation_D.o
+lib/c-cpp/Artic42_D.lib: bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o bin/fileManipulation_D.o bin/dateTime_D.o
+	@ar cr lib/c-cpp/Artic42_D.lib bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o bin/fileManipulation_D.o bin/dateTime_D.o
+	@rm -f bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o bin/fileManipulation_D.o bin/dateTime_D.o
 
 # Herald
 

@@ -3,6 +3,7 @@
     "editor.fontSize": 18,
     "files.associations": {
         "*.ST": "st",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "artic42.h": "c"
     }
 }

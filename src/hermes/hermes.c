@@ -11,7 +11,7 @@ Tested on:    Raspberry Pi OS and wsl2
 *	Include                             *
 ****************************************/
 
-#include <str.h>
+#include <string.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>

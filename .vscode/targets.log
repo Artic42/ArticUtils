@@ -1,178 +1,209 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-# GNU Make 4.3
-# Built for arm-unknown-linux-gnueabihf
-# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# GNU Make 4.2.1
+# Built for x86_64-pc-linux-gnu
+# Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
+<<<<<<< HEAD
 # Make data base, printed on Fri May 27 11:18:58 2022
+=======
+# Make data base, printed on Wed May 25 17:02:53 2022
+>>>>>>> 4d8b075313f7b9f775722e893c202657dcf39573
 
 # Variables
 
-# environment
-LC_ALL = C
-# environment
-NO_AT_BRIDGE = 1
-# environment
-VSCODE_CWD = /home/tester
-# environment
-TEXTDOMAIN = Linux-PAM
-# makefile (from 'makefile', line 8)
-IPATH = -Iinclude
-# default
-MAKE_COMMAND := make
-# environment
-VSCODE_HANDLES_SIGPIPE = true
 # automatic
-@D = $(patsubst %/,%,$(dir $@))
-# makefile (from 'makefile', line 5)
-CFLAGSD = -g $(CFLAGSR)
-# environment
-VSCODE_HANDLES_UNCAUGHT_ERRORS = true
-# default
-.VARIABLES := 
-# environment
-PWD = /home/tester/ArticUtils-1
+<D = $(patsubst %/,%,$(dir $<))
 # automatic
-%D = $(patsubst %/,%,$(dir $%))
-# automatic
-^D = $(patsubst %/,%,$(dir $^))
+?F = $(notdir $?)
 # environment
-VSCODE_LOG_STACK = false
-# automatic
-%F = $(notdir $%)
-# environment
-LANG = C
-# default
-.LOADED := 
-# default
-.INCLUDE_DIRS = /usr/local/include /usr/include /usr/include
-# makefile
-MAKEFLAGS = pqrR
-# makefile
-CURDIR := /home/tester/ArticUtils-1
-# environment
-VSCODE_PIPE_LOGGING = true
-# environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
-# automatic
-*D = $(patsubst %/,%,$(dir $*))
-# environment
-MFLAGS = -pqrR
+WSLENV = VSCODE_WSL_EXT_LOCATION/up:VSCODE_SERVER_TAR/up
 # default
 .SHELLFLAGS := -c
+# environment
+VSCODE_LOG_NATIVE = false
 # automatic
-+D = $(patsubst %/,%,$(dir $+))
-# makefile (from 'makefile', line 1)
-MAKEFILE_LIST := makefile
+<<<<<<< HEAD
+%D = $(patsubst %/,%,$(dir $%))
+=======
+?D = $(patsubst %/,%,$(dir $?))
+>>>>>>> 4d8b075313f7b9f775722e893c202657dcf39573
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
 # automatic
 @F = $(notdir $@)
+# makefile
+CURDIR := /home/artic/ArticUtils
+# makefile
+SHELL = /bin/sh
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
+# environment
+_ = /home/artic/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/node
+# makefile (from 'makefile', line 7)
+OFLAGSD = -c $(CFLAGSD)
+# makefile (from 'makefile', line 1)
+MAKEFILE_LIST :=  makefile
+# 'override' directive
+GNUMAKEFLAGS := 
+# makefile (from 'makefile', line 6)
+OFLAGSR = -c $(CFLAGSR)
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-XDG_SESSION_TYPE = tty
-# automatic
-?D = $(patsubst %/,%,$(dir $?))
-# automatic
-*F = $(notdir $*)
-# automatic
-<D = $(patsubst %/,%,$(dir $<))
-# environment
-VSCODE_NLS_CONFIG = {"locale":"en","availableLanguages":{}}
+VSCODE_CWD = /mnt/c/Program Files/Microsoft VS Code
 # default
-MAKE_HOST := arm-unknown-linux-gnueabihf
-# makefile
-SHELL = /bin/sh
+MAKE_HOST := x86_64-pc-linux-gnu
+ 
+# environment
+PATH = /home/artic/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Program Files/Microsoft VS Code/bin:/mnt/c/Program Files (x86)/dotnet/:/mnt/c/Users/main/AppData/Local/Programs/Python/Python310/Scripts/:/mnt/c/Users/main/AppData/Local/Programs/Python/Python310/:/mnt/c/Users/main/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/main/AppData/Local/GitHubDesktop/bin:/home/artic/.bin:/home/artic/.script
+# makefile (from 'makefile', line 8)
+IPATH = -Iinclude
+# environment
+VSCODE_LOG_STACK = false
+# environment
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-cf8d2659-b1cd-4e95-8cdf-94ece4a1ae21.sock
+# environment
+VSCODE_SERVER_TAR = /mnt/c/Users/main/AppData/Local/Temp/vscode-remote-wsl/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/vscode-server-stable-linux-x64.tar.gz
 # default
-MAKECMDGOALS := all
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
-SHLVL = 0
-# environment
-GCC_COLORS = error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01
-# environment
-MAKELEVEL := 0
-# default
-MAKE = $(MAKE_COMMAND)
-# environment
-PATH = /home/tester/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games:/home/tester/.bin:/home/tester/.script
-# default
-MAKEFILES := 
-# environment
-MOTD_SHOWN = pam
+LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
+# makefile (from 'makefile', line 5)
+CFLAGSD = -g $(CFLAGSR)
 # automatic
-^F = $(notdir $^)
+%F = $(notdir $%)
+# environment
+ 
+VSCODE_PIPE_LOGGING = true
 # makefile (from 'makefile', line 4)
+ 
 CFLAGSR = -Wall
 # environment
+<<<<<<< HEAD
 SSH_CLIENT = 192.168.11.122 62054 22
 # environment
 VSCODE_LOG_NATIVE = false
 # automatic
 ?F = $(notdir $?)
-# environment
-LS_COLORS = 
-# automatic
-+F = $(notdir $+)
-# 'override' directive
-GNUMAKEFLAGS := 
-# environment
-BROWSER = /home/tester/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/bin/helpers/browser.sh
-# environment
-LOGNAME = tester
-# makefile (from 'makefile', line 7)
-OFLAGSD = -c $(CFLAGSD)
-# makefile (from 'makefile', line 6)
-OFLAGSR = -c $(CFLAGSR)
-# makefile
-.DEFAULT_GOAL := all
-# environment
-USER = tester
+=======
+PWD = /home/artic/ArticUtils
 # default
-MAKE_VERSION := 4.3
+.LOADED := 
+>>>>>>> 4d8b075313f7b9f775722e893c202657dcf39573
 # environment
-VSCODE_EXTHOST_WILL_SEND_SOCKET = true
-# environment
-PYTHONPATH = :/home/artic/.lib/python
-# environment
-VSCODE_AGENT_FOLDER = /home/tester/.vscode-server
-# environment
-_ = /home/tester/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/node
-# environment
-XDG_RUNTIME_DIR = /run/user/1002
-# environment
-VSCODE_IPC_HOOK_CLI = /run/user/1002/vscode-ipc-f446a8f6-f4c4-41b3-bdd6-e62d0ac9ce2e.sock
-# environment
-XDG_SESSION_CLASS = user
+WSL_INTEROP = /run/WSL/2714_interop
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-HOME = /home/tester
+HOME = /home/artic
 # environment
-XDG_SESSION_ID = 895
+LOGNAME = artic
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+MAKELEVEL := 0
 # default
-.RECIPEPREFIX := 
+MAKE = $(MAKE_COMMAND)
+# default
+MAKECMDGOALS := all
+# environment
+SHLVL = 0
+# makefile (from 'makefile', line 3)
+CC = gcc
+# default
+MAKE_VERSION := 4.2.1
+# environment
+ 
+USER = artic
+# makefile
+.DEFAULT_GOAL := all
+# environment
+<<<<<<< HEAD
+VSCODE_IPC_HOOK_CLI = /run/user/1002/vscode-ipc-f446a8f6-f4c4-41b3-bdd6-e62d0ac9ce2e.sock
+=======
+NAME = Prometheus
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+>>>>>>> 4d8b075313f7b9f775722e893c202657dcf39573
+# environment
+VSCODE_WSL_EXT_LOCATION = /mnt/c/Users/main/.vscode/extensions/ms-vscode-remote.remote-wsl-0.66.3
+# default
+MAKE_COMMAND := make
+# default
+.VARIABLES := 
+# automatic
+*F = $(notdir $*)
+# environment
+PYTHONPATH = :/home/artic/.bin/python/lib:/home/artic/.bin
+# makefile
+MAKEFLAGS = pqrR
+# environment
+MFLAGS = -pqrR
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# automatic
++F = $(notdir $+)
+# environment
+<<<<<<< HEAD
+XDG_SESSION_ID = 895
+=======
+VSCODE_HANDLES_SIGPIPE = true
+ 
+>>>>>>> 4d8b075313f7b9f775722e893c202657dcf39573
+# default
+MAKEFILES := 
 # automatic
 <F = $(notdir $<)
+# environment
+GCC_COLORS = error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01
+# environment
+LC_ALL = C
+# environment
+HOSTTYPE = x86_64
+# automatic
+^F = $(notdir $^)
 # default
 SUFFIXES := 
 # default
-.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
-# makefile (from 'makefile', line 3)
-CC = gcc
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# default
+.RECIPEPREFIX := 
 # environment
+LANG = C
+# environment
+TERM = xterm-256color
+# environment
+VSCODE_EXTHOST_WILL_SEND_SOCKET = true
+# environment
+<<<<<<< HEAD
 SSH_CONNECTION = 192.168.11.122 62054 192.168.11.175 22
 # variable set hash-table stats:
 # Load=76/1024=7%, Rehash=0, Collisions=2/113=2%
+=======
+WSL_DISTRO_NAME = Debian
+# variable set hash-table stats:
+# Load=73/1024=7%, Rehash=0, Collisions=4/105=4%
+>>>>>>> 4d8b075313f7b9f775722e893c202657dcf39573
 
 # Pattern-specific Variable Values
 
 # No pattern-specific variable values.
+ 
 
 # Directories
 
-# src/thoth (device 45826, inode 787322): 4 files, no impossibilities.
-# . (device 45826, inode 139530): 13 files, no impossibilities.
+# . (device 2064, inode 122054): 13 files, no impossibilities.
+# src/thoth (device 2064, inode 122657): 4 files, no impossibilities.
 
 # 17 files, no impossibilities in 2 directories.
 
@@ -182,37 +213,87 @@ SSH_CONNECTION = 192.168.11.122 62054 192.168.11.175 22
 
 # Files
 
+lib/c-cpp/Artic42_D.lib: bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o bin/fileManipulation_D.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 45):
+	@ar cr lib/c-cpp/Artic42_D.lib bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o bin/fileManipulation_D.o
+	@rm -f bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o bin/fileManipulation_D.o
+
+lib/python/sendEmail.py: src/herald/sendEmail.py
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 53):
+	@cp -f src/herald/sendEmail.py lib/python/sendEmail.py
+
+hermes_py: lib/python/hermes.py
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Artic42_R: lib/c-cpp/Artic42.lib
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+ 
+# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
+
+# Not a target:
+src/pythonLib/modifyFile.py:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+lib/python/hermes.py: src/hermes/hermes.py
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 83):
+	@cp src/hermes/hermes.py lib/python/hermes.py
+
+all: Artic42 hermes herald pythonLib
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
+
+# Not a target:
+src/herald/herald.py:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+src/hermes/bin/hermesTest.app: lib/c-cpp/hermes_D.lib src/hermes/test.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 78):
+	@$(CC) $(CFLAGSD) $(IPATH) lib/c-cpp/hermes_D.lib src/hermes/test.c -o src/hermes/hermesTest.app
+	@./src/hermes/hermesTest.app
+	@rm -f src/hermes/hermesTest.app
+
 # Not a target:
 src/Artic42/IntegerFunctions.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-# Not a target:
-src/pythonLib/readExcel.py:
+Artic42_D: lib/c-cpp/Artic42_D.lib
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
-lib/c-cpp/hermes_D.lib: src/hermes/hermes.c
+thoth_R: lib/c-cpp/thoth.lib
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'makefile', line 75):
-	@$(CC) $(OFLAGSD) $(IPATH) src/hermes/hermes.c -o lib/c-cpp/hermes_D.lib
-
-# Not a target:
-lib/python/thoth.py:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-bin/fileManipulation_D.o: src/Artic42/fileManipulation.c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 42):
-	@$(CC) $(OFLAGSD) $(IPATH) src/Artic42/fileManipulation.c -o bin/fileManipulation_D.o
 
 bin/IntegerFunctions_D.o: src/Artic42/IntegerFunctions.c
 #  Implicit rule search has not been done.
@@ -222,20 +303,260 @@ bin/IntegerFunctions_D.o: src/Artic42/IntegerFunctions.c
 	@$(CC) $(OFLAGSD) $(IPATH) src/Artic42/IntegerFunctions.c -o bin/IntegerFunctions_D.o
 
 # Not a target:
+.SUFFIXES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/Artic42/fileManipulation.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+hermes_R: lib/c-cpp/hermes.lib
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+lib/c-cpp/thoth.lib: src/thoth/thoth.h src/thoth/thoth.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 103):
+	@${CC} ${OFLAGSR} ${IPATH} src/thotho/thoth.c -o lib/c-cpp/thoth.lib
+
+# Not a target:
 src/Artic42/CharacterFunctions.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-05-22 19:57:12.177274878
+#  Last modified 2022-02-12 09:23:37.811051521
 #  File has been updated.
 #  Successfully updated.
 
-lib/c-cpp/thotho_D.lib: src/thoth/thoth.c src/thoth/thoth.h
+# Not a target:
+src/herald/sendEmail.py:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/hermes/test.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-05-20 18:13:45.017699531
+#  File has been updated.
+#  Successfully updated.
+
+lib/python/readExcel.py: src/pythonLib/readExcel.py
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 92):
+	@cp src/pythonLib/readExcel.py lib/python/readExcel.py
+
+bin/fileManipulation_D.o: src/Artic42/fileManipulation.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 42):
+	@$(CC) $(OFLAGSD) $(IPATH) src/Artic42/fileManipulation.c -o bin/fileManipulation_D.o
+
+hermes_D: lib/c-cpp/hermes_D.lib
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+pythonLib: lib/python/modifyFile.py lib/python/readExcel.py
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+<<<<<<< HEAD
+# Not a target:
+ 
+src/Artic42/fileManipulation.c:
+=======
+bin/CharacterFunctions_D.o: src/Artic42/CharacterFunctions.c
+>>>>>>> 4d8b075313f7b9f775722e893c202657dcf39573
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 36):
+	@$(CC) $(OFLAGSD) $(IPATH) src/Artic42/CharacterFunctions.c -o bin/CharacterFunctions_D.o
+
+lib/c-cpp/thotho_D.lib: src/thoth/thoth.h src/thoth/thoth.c
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'makefile', line 106):
 	@${CC} ${OFLAGSD} ${IPATH} src/thotho/thoth.c -o lib/c-cpp/thoth.lib
 
-Artic42_D: lib/c-cpp/Artic42_D.lib
+lib/c-cpp/hermes.lib: src/hermes/hermes.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 72):
+	@$(CC) $(OFLAGSR) $(IPATH) src/hermes/hermes.c -o lib/c-cpp/hermes.lib
+
+lib/c-cpp/Artic42.lib: bin/CharacterFunctions.o bin/IntegerFunctions.o bin/fileManipulation.o
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
+#  recipe to execute (from 'makefile', line 32):
+	@ar cr lib/c-cpp/Artic42.lib bin/CharacterFunctions.o bin/IntegerFunctions.o bin/fileManipulation.o
+	@rm -f bin/CharacterFunctions.o bin/IntegerFunctions.o bin/fileManipulation.o
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+herald: lib/python/sendEmail.py bin/sendEmail.app bin/herald.app
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+Artic42: Artic42_R Artic42_D
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
+#  recipe to execute (from 'makefile', line 20):
+	@cp src/Artic42/Artic42.h include/Artic42.h
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 117):
+	@rm -f bin/*.app
+	@rm -f lib/c-cpp/*.lib
+	@rm -f lib/python/*.py
+
+# Not a target:
+src/hermes/hermes.py:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+bin/herald.app: src/herald/herald.py
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 59):
+	@cat pythonInterpreter src/herald/herald.py > bin/herald.app
+
+# Not a target:
+src/pythonLib/readExcel.py:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/thoth/thoth.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+lib/python/modifyFile.py: src/pythonLib/modifyFile.py
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 89):
+	@cp src/pythonLib/modifyFile.py lib/python/modifyFile.py
+
+bin/IntegerFunctions.o: src/Artic42/IntegerFunctions.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 26):
+	@$(CC) $(OFLAGSR) $(IPATH) src/Artic42/IntegerFunctions.c -o bin/IntegerFunctions.o
+
+# Not a target:
+lib/c-cpp/thoth_D.lib:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+thoth_D: lib/c-cpp/thoth_D.lib
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+thoth: thoth_D thoth_py thoth_R
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+ 
+#  recipe to execute (from 'makefile', line 100):
+	@cp src/thoth/thoth.h include/thoth.h
+
+# Not a target:
+src/thoth/thoth.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+bin/fileManipulation.o: src/Artic42/fileManipulation.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 29):
+	@$(CC) $(OFLAGSR) $(IPATH) src/Artic42/fileManipulation.c -o bin/fileManipulation.o
+
+lib/c-cpp/hermes_D.lib: src/hermes/hermes.c
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 75):
+	@$(CC) $(OFLAGSD) $(IPATH) src/hermes/hermes.c -o lib/c-cpp/hermes_D.lib
+
+bin/sendEmail.app: src/herald/sendEmail.py
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'makefile', line 56):
+	@cat pythonInterpreter src/herald/sendEmail.py > bin/sendEmail.app
+
+bin/CharacterFunctions.o: src/Artic42/CharacterFunctions.c
+#  Implicit rule search has not been done.
+#  Implicit/static pattern stem: ''
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := bin/CharacterFunctions.o
+# automatic
+# % := 
+# automatic
+# * := 
+# automatic
+# + := src/Artic42/CharacterFunctions.c
+# automatic
+# | := 
+# automatic
+# < := src/Artic42/CharacterFunctions.c
+# automatic
+# ^ := src/Artic42/CharacterFunctions.c
+# automatic
+# ? := src/Artic42/CharacterFunctions.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/15=7%
+#  recipe to execute (from 'makefile', line 23):
+	@$(CC) $(OFLAGSR) $(IPATH) src/Artic42/CharacterFunctions.c -o bin/CharacterFunctions.o
+
+thoth_py: lib/python/thoth.py
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -253,240 +574,16 @@ hermesTest: src/hermes/bin/hermesTest.app
 #  File has not been updated.
 
 # Not a target:
-src/pythonLib/modifyFile.py:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-lib/python/hermes.py: src/hermes/hermes.py
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 83):
-	@cp src/hermes/hermes.py lib/python/hermes.py
-
-hermes_py: lib/python/hermes.py
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-bin/CharacterFunctions.o: src/Artic42/CharacterFunctions.c
-#  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := bin/CharacterFunctions.o
-# automatic
-# * := 
-# automatic
-# < := src/Artic42/CharacterFunctions.c
-# automatic
-# + := src/Artic42/CharacterFunctions.c
-# automatic
-# % := 
-# automatic
-# ^ := src/Artic42/CharacterFunctions.c
-# automatic
-# ? := src/Artic42/CharacterFunctions.c
-# automatic
-# | := 
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=4/15=27%
-#  recipe to execute (from 'makefile', line 23):
-	@$(CC) $(OFLAGSR) $(IPATH) src/Artic42/CharacterFunctions.c -o bin/CharacterFunctions.o
-
-# Not a target:
-src/herald/herald.py:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-bin/fileManipulation.o: src/Artic42/fileManipulation.c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 29):
-	@$(CC) $(OFLAGSR) $(IPATH) src/Artic42/fileManipulation.c -o bin/fileManipulation.o
-
-clean:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 117):
-	@rm -f bin/*.app
-	@rm -f lib/c-cpp/*.lib
-	@rm -f lib/python/*.py
-
-Artic42: Artic42_R Artic42_D
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
-#  recipe to execute (from 'makefile', line 20):
-	@cp src/Artic42/Artic42.h include/Artic42.h
-
-lib/c-cpp/hermes.lib: src/hermes/hermes.c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 72):
-	@$(CC) $(OFLAGSR) $(IPATH) src/hermes/hermes.c -o lib/c-cpp/hermes.lib
-
-bin/sendEmail.app: src/herald/sendEmail.py
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 56):
-	@cat pythonInterpreter src/herald/sendEmail.py > bin/sendEmail.app
-
-hermes_D: lib/c-cpp/hermes_D.lib
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-lib/python/modifyFile.py: src/pythonLib/modifyFile.py
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 89):
-	@cp src/pythonLib/modifyFile.py lib/python/modifyFile.py
-
-herald: lib/python/sendEmail.py bin/sendEmail.app bin/herald.app
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
 src/hermes/hermes.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
- 
-src/Artic42/fileManipulation.c:
+lib/python/thoth.py:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-
-# Not a target:
-.DEFAULT:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-thoth_D: lib/c-cpp/thoth_D.lib
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-all: Artic42 hermes herald pythonLib
-#  Command line target.
-#  Implicit rule search has been done.
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
-
-# Not a target:
-src/hermes/hermes.py:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-Artic42_R: lib/c-cpp/Artic42.lib
-#  Implicit rule search has been done.
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
-
-# Not a target:
-src/hermes/test.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-lib/c-cpp/thoth.lib: src/thoth/thoth.c src/thoth/thoth.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 103):
-	@${CC} ${OFLAGSR} ${IPATH} src/thotho/thoth.c -o lib/c-cpp/thoth.lib
-
-lib/python/sendEmail.py: src/herald/sendEmail.py
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 53):
-	@cp -f src/herald/sendEmail.py lib/python/sendEmail.py
-
-src/hermes/bin/hermesTest.app: lib/c-cpp/hermes_D.lib src/hermes/test.c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 78):
-	@$(CC) $(CFLAGSD) $(IPATH) lib/c-cpp/hermes_D.lib src/hermes/test.c -o src/hermes/hermesTest.app
-	@./src/hermes/hermesTest.app
-	@rm -f src/hermes/hermesTest.app
-
-# Not a target:
-lib/c-cpp/thoth_D.lib:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-lib/c-cpp/Artic42_D.lib: bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o bin/fileManipulation_D.o
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 45):
-	@ar cr lib/c-cpp/Artic42_D.lib bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o bin/fileManipulation_D.o
-	@rm -f bin/CharacterFunctions_D.o bin/IntegerFunctions_D.o bin/fileManipulation_D.o
-
-thoth: thoth_D thoth_py thoth_R
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 100):
-	@cp src/thoth/thoth.h include/thoth.h
-
-bin/herald.app: src/herald/herald.py
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 59):
-	@cat pythonInterpreter src/herald/herald.py > bin/herald.app
-
-bin/IntegerFunctions.o: src/Artic42/IntegerFunctions.c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 26):
-	@$(CC) $(OFLAGSR) $(IPATH) src/Artic42/IntegerFunctions.c -o bin/IntegerFunctions.o
-
-thoth_py: lib/python/thoth.py
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-hermes_R: lib/c-cpp/hermes.lib
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-makefile:
-#  Implicit rule search has been done.
-#  Last modified 2022-05-22 19:57:12.177274878
-#  File has been updated.
-#  Successfully updated.
 
 install: all
 #  Implicit rule search has not been done.
@@ -498,67 +595,8 @@ install: all
 	@cp -rf include/* ~/.include/
 	@cp -rf lib/* ~/.lib/
 
-# Not a target:
-src/thoth/thoth.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-pythonLib: lib/python/modifyFile.py lib/python/readExcel.py
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-lib/c-cpp/Artic42.lib: bin/CharacterFunctions.o bin/IntegerFunctions.o bin/fileManipulation.o
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/7=0%
-#  recipe to execute (from 'makefile', line 32):
-	@ar cr lib/c-cpp/Artic42.lib bin/CharacterFunctions.o bin/IntegerFunctions.o bin/fileManipulation.o
-	@rm -f bin/CharacterFunctions.o bin/IntegerFunctions.o bin/fileManipulation.o
-
-bin/CharacterFunctions_D.o: src/Artic42/CharacterFunctions.c
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 36):
-	@$(CC) $(OFLAGSD) $(IPATH) src/Artic42/CharacterFunctions.c -o bin/CharacterFunctions_D.o
-
-# Not a target:
-.SUFFIXES:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-lib/python/readExcel.py: src/pythonLib/readExcel.py
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'makefile', line 92):
-	@cp src/pythonLib/readExcel.py lib/python/readExcel.py
-
-# Not a target:
-src/thoth/thoth.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-src/herald/sendEmail.py:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-thoth_R: lib/c-cpp/thoth.lib
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
 # files hash-table stats:
-# Load=53/1024=5%, Rehash=0, Collisions=4/134=3%
+# Load=53/1024=5%, Rehash=0, Collisions=3/134=2%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
@@ -566,11 +604,16 @@ thoth_R: lib/c-cpp/thoth.lib
 # No general ('VPATH' variable) search path.
 
 # strcache buffers: 1 (0) / strings = 70 / storage = 1074 B / avg = 15 B
-# current buf: size = 8174 B / used = 1074 B / count = 70 / avg = 15 B
+# current buf: size = 8162 B / used = 1074 B / count = 70 / avg = 15 B
 
 # strcache performance: lookups = 153 / hit rate = 54%
 # hash-table stats:
+<<<<<<< HEAD
 # Load=70/8192=1%, Rehash=0, Collisions=3/153=2%
 # Finished Make data base on Fri May 27 11:18:58 2022
+=======
+# Load=70/8192=1%, Rehash=0, Collisions=4/153=3%
+# Finished Make data base on Wed May 25 17:02:53 2022
+>>>>>>> 4d8b075313f7b9f775722e893c202657dcf39573
 
  

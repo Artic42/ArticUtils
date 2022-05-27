@@ -13,7 +13,7 @@ Tested on:    Raspberry Pi OS and wsl2
 ****************************************/
 
 #include <stdio.h>
-#include <string.h>
+#include <str.h>
 
 #include "Artic42.h"
 #include "hermes.h"
@@ -33,7 +33,7 @@ int main (void)
     int testInteger = 533;
     float testFloat = 43.33333;
     char testChar = 'B';
-    string testPath = "/tmp/testHermes";
+    str testPath = "/tmp/testHermes";
     // Test bool2file, file2bool, createFile, deleteFile
     bool2file (testPath, BFALSE);
     if (file2bool(testPath) == BTRUE)
@@ -97,8 +97,8 @@ int main (void)
         //return 1;
     }
 
-    //test string
-    string2file (testPath, testPath);
+    //test str
+    str2file (testPath, testPath);
     file2print (testPath);
     printf ("%s \n", testPath);
     printf ("TEST OK, if last 2 lines are the same.\n");

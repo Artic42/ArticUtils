@@ -35,7 +35,7 @@ Tested on:   Windows Subsystem for Linux
 *	File Manipulation                          *
 ***********************************************/
 
-void addLine2File (string line, FILE* FP)
+void addLine2File (str line, FILE* FP)
 {
     fprintf (FP, "%s\n", line);
 }

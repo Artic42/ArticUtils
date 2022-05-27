@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun May 22 21:24:16 2022
+# Make data base, printed on Fri May 27 11:18:58 2022
 
 # Variables
 
@@ -36,8 +36,6 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 PWD = /home/tester/ArticUtils-1
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
-# environment
-OLDPWD = /home/tester/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
@@ -107,7 +105,7 @@ MOTD_SHOWN = pam
 # makefile (from 'makefile', line 4)
 CFLAGSR = -Wall
 # environment
-SSH_CLIENT = 192.168.11.122 64107 22
+SSH_CLIENT = 192.168.11.122 62054 22
 # environment
 VSCODE_LOG_NATIVE = false
 # automatic
@@ -143,7 +141,7 @@ _ = /home/tester/.vscode-server/bin/c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5/nod
 # environment
 XDG_RUNTIME_DIR = /run/user/1002
 # environment
-VSCODE_IPC_HOOK_CLI = /run/user/1002/vscode-ipc-8038918a-93e7-4ee2-800c-c9323f93ae09.sock
+VSCODE_IPC_HOOK_CLI = /run/user/1002/vscode-ipc-f446a8f6-f4c4-41b3-bdd6-e62d0ac9ce2e.sock
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -151,7 +149,7 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = /home/tester
 # environment
-XDG_SESSION_ID = 770
+XDG_SESSION_ID = 895
 # default
 .RECIPEPREFIX := 
 # automatic
@@ -163,9 +161,9 @@ SUFFIXES :=
 # makefile (from 'makefile', line 3)
 CC = gcc
 # environment
-SSH_CONNECTION = 192.168.11.122 64107 192.168.11.175 22
+SSH_CONNECTION = 192.168.11.122 62054 192.168.11.175 22
 # variable set hash-table stats:
-# Load=77/1024=8%, Rehash=0, Collisions=2/114=2%
+# Load=76/1024=7%, Rehash=0, Collisions=2/113=2%
 
 # Pattern-specific Variable Values
 
@@ -369,6 +367,7 @@ src/hermes/hermes.c:
 #  File has not been updated.
 
 # Not a target:
+ 
 src/Artic42/fileManipulation.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
@@ -572,6 +571,6 @@ thoth_R: lib/c-cpp/thoth.lib
 # strcache performance: lookups = 153 / hit rate = 54%
 # hash-table stats:
 # Load=70/8192=1%, Rehash=0, Collisions=3/153=2%
-# Finished Make data base on Sun May 22 21:24:16 2022
+# Finished Make data base on Fri May 27 11:18:58 2022
 
  

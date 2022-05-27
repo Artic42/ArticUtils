@@ -35,10 +35,10 @@ struct log
 *	Public Function Prototype           * 
 ****************************************/
 
-struct log *createLog (char name, string path, char mask, int entries);
+struct log *createLog (char name, str path, char mask, int entries);
 void closeLog (struct log* logPointer);
 void closeAllLog (void);
-void addEntry (string Message, char mask);
+void addEntry (str Message, char mask);
 void addMask (struct log* logPointer, char mask);
 void delMask (struct log* logPointer, char mask);
 

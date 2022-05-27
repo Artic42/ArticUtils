@@ -1,4 +1,8 @@
 {
     "editor.fontFamily": "SauceCodePro Nerd Font Mono",
-    "editor.fontSize": 18
+    "editor.fontSize": 18,
+    "files.associations": {
+        "*.ST": "st",
+        "stdio.h": "c"
+    }
 }

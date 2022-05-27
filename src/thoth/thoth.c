@@ -20,7 +20,7 @@ Tested on:    Raspberry Pi OS and wsl2
 *   Private function prototype          *
 ****************************************/
 
-void calculateString (string Message, char mask);
+void calculatestr (str Message, char mask);
 void addLog2List (struct log* logPointer);
 void removeLog2List (struct log* logPointer);
 FILE* openLogFile (struct log* logPointer);
@@ -44,7 +44,7 @@ char buffer [MAX_MSG_LENGTH+512];
 *   Code                                *
 ****************************************/
 
-struct log *createLog (string name, string path, char mask)
+struct log *createLog (str name, str path, char mask)
 {
     struct log *logPointer;
 
@@ -80,11 +80,11 @@ void closeAllLogs (void)
     }
 }
 
-void addEntry (string message, char mask)
+void addEntry (str message, char mask)
 {
     struct log *logPointer = firstLog;
 
-    calculateString (message, mask);
+    calculatestr (message, mask);
 
     while (logPointer != NULL)
     {

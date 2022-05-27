@@ -16,7 +16,7 @@ Description: Header were I include a series of common macros and definitions tha
 
 // Variable types
 typedef char boolean;
-typedef const char* string;
+typedef const char* str;
 typedef char int8b;
 
 #define BTRUE 1
@@ -62,7 +62,7 @@ int intGiveMax (int value1, int value2);
 int intGiveMin (int value1, int value2);
 
 //File manipulation
-void addLine2File (string line, FILE* FP);
+void addLine2File (str line, FILE* FP);
 
 //Date and time
 dateTime getDateTime (void);

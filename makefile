@@ -71,7 +71,7 @@ hermes_D: lib/c-cpp/hermes_D.lib
 hermes_py: lib/python/hermes.py
 hermes: hermes_D hermes_R hermes_py
 	@cp src/hermes/hermes.h include/hermes.h
-hermesTest: src/hermes/bin/hermesTest.app
+hermesTest: src/hermes/hermesTest.app
 
 
 lib/c-cpp/hermes.lib: src/hermes/hermes.c
@@ -80,7 +80,7 @@ lib/c-cpp/hermes.lib: src/hermes/hermes.c
 lib/c-cpp/hermes_D.lib: src/hermes/hermes.c
 	@$(CC) $(OFLAGSD) $(IPATH) src/hermes/hermes.c -o lib/c-cpp/hermes_D.lib
 
-src/hermes/bin/hermesTest.app: lib/c-cpp/hermes_D.lib src/hermes/test.c
+src/hermes/hermesTest.app: lib/c-cpp/hermes_D.lib src/hermes/test.c
 	@$(CC) $(CFLAGSD) $(IPATH) lib/c-cpp/hermes_D.lib src/hermes/test.c -o src/hermes/hermesTest.app
 	@./src/hermes/hermesTest.app
 	@rm -f src/hermes/hermesTest.app
@@ -99,17 +99,24 @@ lib/python/readExcel.py: src/pythonLib/readExcel.py
 
 #Thoth
 
-thoth_R: lib/c-cpp/thoth.lib
-thoth_D: lib/c-cpp/thoth_D.lib
+thoth_R: lib/c-cpp/thoth.lib Artic42_R
+thoth_D: lib/c-cpp/thoth_D.lib Artic42_D
 thoth_py: lib/python/thoth.py
-thoth: thoth_D thoth_py thoth_R
+thoth: thoth_D thoth_R
 	@cp src/thoth/thoth.h include/thoth.h
 
-lib/c-cpp/thoth.lib: src/thoth/thoth.*
-	@${CC} ${OFLAGSR} ${IPATH} src/thotho/thoth.c -o lib/c-cpp/thoth.lib
+thothTest: src/thoth/thothTest.app thoth_D
 
-lib/c-cpp/thotho_D.lib: src/thoth/thoth.*
-	@${CC} ${OFLAGSD} ${IPATH} src/thotho/thoth.c -o lib/c-cpp/thoth.lib
+lib/c-cpp/thoth.lib: src/thoth/thoth.* Artic42_R
+	@${CC} ${OFLAGSR} ${IPATH} src/thoth/thoth.c -o lib/c-cpp/thoth.lib
+
+lib/c-cpp/thoth_D.lib: src/thoth/thoth.* Artic42_D
+	@${CC} ${OFLAGSD} ${IPATH} src/thoth/thoth.c -o lib/c-cpp/thoth_D.lib
+
+src/thoth/thothTest.app: lib/c-cpp/thoth_D.lib src/thoth/test.c Artic42_D
+	@$(CC) $(CFLAGSD) $(IPATH) lib/c-cpp/thoth_D.lib lib/c-cpp/Artic42_D.lib src/thoth/test.c -o src/thoth/thothTest.app
+#	@./src/thoth/thothTest.app
+	@rm -f src/thoth/thothTest.app
 
 # General
 

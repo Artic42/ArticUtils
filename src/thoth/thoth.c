@@ -83,7 +83,7 @@ void closeAllLogs (void)
     }
 }
 
-void addEntry (str message, char mask)
+void addEntry (char mask, str message)
 {
     struct log *logPointer = firstLog;
 
@@ -91,7 +91,7 @@ void addEntry (str message, char mask)
 
     while (logPointer != NULL)
     {
-        if (mask && logPointer->mask)
+        if (mask & logPointer->mask)
         {
             addLine2File (buffer, logPointer->filePointer);
 
@@ -102,9 +102,8 @@ void addEntry (str message, char mask)
                 closeLogFile (logPointer);
                 logPointer->filePointer = openLogFile (logPointer);
             }
-
-            logPointer = logPointer->nxtLog;
         }
+        logPointer = logPointer->nxtLog;
     }
 }
 
@@ -169,6 +168,7 @@ void calculateString  (str Message, char mask)
 
 void addLog2List (struct log* logPointer)
 {
+    if (firstLog == NULL) { firstLog = logPointer; }
     logPointer->prvLog = lastLog;
     if (lastLog != NULL) { lastLog->nxtLog = logPointer; }
     lastLog = logPointer;
@@ -185,16 +185,21 @@ void removeLog2List (struct log* logPointer)
 FILE* openLogFile (struct log* logPointer)
 {
     dateTime today = getDateTime();
-    char partBuffer[MAX_MSG_LENGTH];
+    char partBuffer[MAX_MSG_LENGTH], cmdDirCreation[MAX_PATH_LENGTH + 50];
 
     strcpy(buffer, logPointer->directoryPath);
     strcat(buffer, "/");
     strcat(buffer, logPointer->name);
 
-    sprintf(partBuffer, "_%04d%02d%02d_%02d%02d%02d", today.year, today.month, today.day, today.hour, today.min, today.sec);
+    sprintf(partBuffer, "_%04d%02d%02d_%02d%02d%02d.log", today.year, today.month, today.day, today.hour, today.min, today.sec);
     strcat(buffer, partBuffer);
 
-    return openFile2Write (buffer);
+    strcpy(cmdDirCreation, "mkdir -p ");
+    strcat(cmdDirCreation, logPointer->directoryPath);
+    system(cmdDirCreation);
+
+    return fopen(buffer, "w");
+    //return openFile2Write (buffer);
 }
 
 void closeLogFile (struct log* logPointer)

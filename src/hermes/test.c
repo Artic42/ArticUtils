@@ -13,7 +13,7 @@ Tested on:    Raspberry Pi OS and wsl2
 ****************************************/
 
 #include <stdio.h>
-#include <str.h>
+#include <string.h>
 
 #include "Artic42.h"
 #include "hermes.h"

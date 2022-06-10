@@ -16,7 +16,7 @@ Description: Header were I include a series of common macros and definitions tha
 
 // Variable types
 typedef char boolean;
-typedef const char* str;
+typedef const char *str;
 typedef char int8b;
 
 #define BTRUE 1

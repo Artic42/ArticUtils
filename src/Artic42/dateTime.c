@@ -53,7 +53,7 @@ dateTime getDateTime (void)
 
     s_dateTime.day = T.tm_mday;
     s_dateTime.month = T.tm_mon;
-    s_dateTime.year = T.tm_year;
+    s_dateTime.year = T.tm_year + 1900;
     s_dateTime.hour = T.tm_hour;
     s_dateTime.min = T.tm_min;
     s_dateTime.sec = T.tm_sec;

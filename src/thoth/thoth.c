@@ -21,8 +21,8 @@ Tested on:    Raspberry Pi OS and wsl2
 *   Private function prototype          *
 ****************************************/
 
-void getMaskName (char Mask);
-void calculateString  (str Message, char mask);
+void getMaskName (int mask);
+void calculateString  (str Message, int mask);
 void addLog2List (struct log* logPointer);
 void removeLog2List (struct log* logPointer);
 FILE* openLogFile (struct log* logPointer);
@@ -34,7 +34,8 @@ void closeLogFile (struct log* logPointer);
 
 struct log *firstLog = NULL;
 struct log *lastLog = NULL;
-char buffer [MAX_MSG_LENGTH+512];
+char messageBuffer [MAX_MSG_LENGTH+512];
+char pathBuffer [MAX_PATH_LENGTH+MAX_NAME_LENGTH+50];
 char maskBuffer [32];
 
 /****************************************
@@ -47,7 +48,7 @@ char maskBuffer [32];
 *   Code                                *
 ****************************************/
 
-struct log* createLog (str name, str path, char mask, int entries)
+struct log* createLog (str name, str path, int mask, int entries)
 {
     struct log *logPointer;
 
@@ -56,10 +57,13 @@ struct log* createLog (str name, str path, char mask, int entries)
     strcpy(logPointer->name, name);
     strcpy(logPointer->directoryPath, path);
     logPointer->mask = mask;
+    logPointer->entriesOnFile = 0;
+    logPointer->entryLimit = entries;
+    logPointer->nxtLog = NULL;
+    logPointer->prvLog = NULL;
+    logPointer->filePointer = openLogFile (logPointer);
 
     addLog2List (logPointer);
-
-    logPointer->filePointer = openLogFile (logPointer);
 
     return logPointer;
 }
@@ -83,7 +87,7 @@ void closeAllLogs (void)
     }
 }
 
-void addEntry (char mask, str message)
+void addEntry (int mask, str message)
 {
     struct log *logPointer = firstLog;
 
@@ -93,12 +97,13 @@ void addEntry (char mask, str message)
     {
         if (mask & logPointer->mask)
         {
-            addLine2File (buffer, logPointer->filePointer);
+            addLine2File (messageBuffer, logPointer->filePointer);
 
             logPointer->entriesOnFile++;
 
-            if (logPointer->entriesOnFile >= ENTRY_LIMIT)
+            if (logPointer->entriesOnFile >= logPointer->entryLimit)
             {
+                logPointer->entriesOnFile = 0;
                 closeLogFile (logPointer);
                 logPointer->filePointer = openLogFile (logPointer);
             }
@@ -107,17 +112,17 @@ void addEntry (char mask, str message)
     }
 }
 
-void addMask (struct log* logPointer, char mask)
+void addMask (struct log* logPointer, int mask)
 {
     logPointer->mask = logPointer->mask | mask;
 }
 
-void delMask (struct log* logPointer, char mask)
+void delMask (struct log* logPointer, int mask)
 {
     logPointer->mask = logPointer->mask & (~mask);
 }
 
-void getMaskName (char mask)
+void getMaskName (int mask)
 {
     switch (mask)
     {
@@ -139,31 +144,36 @@ void getMaskName (char mask)
     case SAFETY_ALARM:
         strcpy(maskBuffer, "SAFETY_ALARM");
         break;
-    case SAFETY_ERROR:
-        strcpy(maskBuffer, "SAFETY_ERROR");
+    case COMUNNICATION_SEND:
+        strcpy(maskBuffer, "COMUNNICATION_SEND");
+        break;
+    case COMUNNICATION_REC:
+        strcpy(maskBuffer, "COMUNNICATION_REC");
+        break;
+    case ERROR:
+        strcpy(maskBuffer, "ERROR");
         break;
     default:
         break;
     }
 }
 
-void calculateString  (str Message, char mask)
+void calculateString  (str Message, int mask)
 {
     char partBuffer[MAX_MSG_LENGTH];
     dateTime today = getDateTime();
 
     getMaskName(mask);
-    strcpy(buffer, "");
     // YY/MM/DD HH:MM:SS - MASK - MESSAGE
     sprintf (partBuffer, "%04d/%02d/%02d ", today.year, today.month, today.day);
-    strcat (buffer, partBuffer);
+    strcpy (messageBuffer, partBuffer);
 
     sprintf (partBuffer, "%02d:%02d:%02d - ", today.hour, today.min, today.sec);
-    strcat (buffer, partBuffer);
+    strcat (messageBuffer, partBuffer);
 
-    strcat (buffer, maskBuffer);
-    strcat (buffer, " - ");
-    strcat (buffer, Message);
+    strcat (messageBuffer, maskBuffer);
+    strcat (messageBuffer, " - ");
+    strcat (messageBuffer, Message);
 }
 
 void addLog2List (struct log* logPointer)
@@ -176,30 +186,37 @@ void addLog2List (struct log* logPointer)
 
 void removeLog2List (struct log* logPointer)
 {
-    logPointer->prvLog->nxtLog = logPointer->nxtLog;
-    logPointer->nxtLog->prvLog = logPointer->prvLog;
+    if (logPointer->prvLog != NULL) {logPointer->prvLog->nxtLog = logPointer->nxtLog;}
+    if (logPointer->nxtLog != NULL) {logPointer->nxtLog->prvLog = logPointer->prvLog;}
     if (logPointer->nxtLog == NULL) {lastLog = logPointer->prvLog;}
     if (logPointer->prvLog == NULL) {firstLog = logPointer->nxtLog;}
 }
 
 FILE* openLogFile (struct log* logPointer)
 {
+    FILE* FP;
     dateTime today = getDateTime();
-    char partBuffer[MAX_MSG_LENGTH], cmdDirCreation[MAX_PATH_LENGTH + 50];
+    char partBuffer[MAX_MSG_LENGTH + 50];
 
-    strcpy(buffer, logPointer->directoryPath);
-    strcat(buffer, "/");
-    strcat(buffer, logPointer->name);
+    strcpy(pathBuffer, logPointer->directoryPath);
+    strcat(pathBuffer, "/");
+    strcat(pathBuffer, logPointer->name);
 
     sprintf(partBuffer, "_%04d%02d%02d_%02d%02d%02d.log", today.year, today.month, today.day, today.hour, today.min, today.sec);
-    strcat(buffer, partBuffer);
+    strcat(pathBuffer, partBuffer);
 
-    strcpy(cmdDirCreation, "mkdir -p ");
-    strcat(cmdDirCreation, logPointer->directoryPath);
-    system(cmdDirCreation);
+    createDirectory (logPointer->directoryPath);
 
-    return fopen(buffer, "w");
-    //return openFile2Write (buffer);
+    if (pathExists(pathBuffer) == BFALSE)
+    {
+        FP = openFile2Write (pathBuffer);
+        addLine2File (logPointer->name, FP);
+    }
+    else
+    {
+        FP = openFile2Append (pathBuffer);
+    }
+    return FP;
 }
 
 void closeLogFile (struct log* logPointer)

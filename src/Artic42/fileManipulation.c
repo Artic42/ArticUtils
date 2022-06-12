@@ -12,6 +12,9 @@ Tested on:   Windows Subsystem for Linux
 ************************************************/
 
 #include <stdio.h>
+#include <unistd.h>
+#include <string.h>
+#include <stdlib.h>
 
 #include "Artic42.h"
 
@@ -54,6 +57,23 @@ FILE* openFile2Read (str path)
 FILE* openFile2Append (str path)
 {
     return fopen (path, "a");
+}
+
+void createDirectory (str path)
+{
+    if (pathExists(path) == BFALSE)
+    {
+        char cmdDirCreation[2048];
+        strcpy(cmdDirCreation, "mkdir -p ");
+        strcat(cmdDirCreation, path);
+        system(cmdDirCreation);
+    }
+}
+
+char pathExists (str path)
+{
+    if (access(path, F_OK) == 0) { return BTRUE;}
+    else { return BFALSE; }
 }
 
 void closeFile (FILE* FP)

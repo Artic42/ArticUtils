@@ -16,7 +16,7 @@ Description: Header were I include a series of common macros and definitions tha
 
 // Variable types
 typedef char boolean;
-typedef const char* str;
+typedef const char *str;
 typedef char int8b;
 
 #define BTRUE 1
@@ -66,6 +66,8 @@ void addLine2File (str line, FILE* FP);
 FILE* openFile2Write (str path);
 FILE* openFile2Read (str path);
 FILE* openFile2Append (str path);
+void createDirectory (str path);
+char pathExists (str path);
 void closeFile (FILE* FP);
 
 //Date and time

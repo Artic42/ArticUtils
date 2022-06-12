@@ -87,6 +87,7 @@ src/hermes/hermesTest.app: lib/c-cpp/hermes_D.lib src/hermes/test.c
 
 lib/python/hermes.py: src/hermes/hermes.py
 	@cp src/hermes/hermes.py lib/python/hermes.py
+	
 # Python Library
 
 pythonLib: lib/python/modifyFile.py lib/python/readExcel.py
@@ -114,8 +115,9 @@ lib/c-cpp/thoth_D.lib: src/thoth/thoth.* Artic42_D
 	@${CC} ${OFLAGSD} ${IPATH} src/thoth/thoth.c -o lib/c-cpp/thoth_D.lib
 
 src/thoth/thothTest.app: lib/c-cpp/thoth_D.lib src/thoth/test.c Artic42_D
+	@rm -rf logs
 	@$(CC) $(CFLAGSD) $(IPATH) lib/c-cpp/thoth_D.lib lib/c-cpp/Artic42_D.lib src/thoth/test.c -o src/thoth/thothTest.app
-#	@./src/thoth/thothTest.app
+	@./src/thoth/thothTest.app
 	@rm -f src/thoth/thothTest.app
 
 # General
@@ -130,3 +132,4 @@ clean:
 	@rm -f bin/*.app
 	@rm -f lib/c-cpp/*.lib
 	@rm -f lib/python/*.py
+	@rm -rf logs

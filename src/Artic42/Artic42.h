@@ -66,6 +66,8 @@ void addLine2File (str line, FILE* FP);
 FILE* openFile2Write (str path);
 FILE* openFile2Read (str path);
 FILE* openFile2Append (str path);
+void createDirectory (str path);
+char pathExists (str path);
 void closeFile (FILE* FP);
 
 //Date and time

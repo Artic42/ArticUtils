@@ -123,10 +123,11 @@ src/thoth/thothTest.app: lib/c-cpp/thoth_D.lib src/thoth/test.c Artic42_D
 # General
 
 install: all
-	@mkdir -p ~/.bin/ ~/.include ~/.lib/
+	@mkdir -p ~/.bin/ ~/.include ~/.lib/ ~/Templates/tex/
 	@cp -rf bin/* ~/.bin/
 	@cp -rf include/* ~/.include/
 	@cp -rf lib/* ~/.lib/
+	@cp -rf src/texTemplate/* ~/Templates/tex/
 
 clean:
 	@rm -f bin/*.app

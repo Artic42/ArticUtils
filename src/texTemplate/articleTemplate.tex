@@ -1,0 +1,57 @@
+\documentclass[14pt]{extarticle}
+
+\usepackage{fontspec}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{lipsum}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{subfigure}
+\usepackage{verbatim}
+\usepackage{appendix}
+\usepackage{pagecolor}
+
+\setmainfont{SauceCodePro Nerd Font Mono}
+\fancypagestyle{firstPage}
+{
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{1.5pt}
+    \lhead{}
+    \rhead{}
+    \chead{}
+    \lfoot{\today}
+    \rfoot{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+    \cfoot{\MYNAME}
+}
+\fancypagestyle{mainPage}
+{
+    \fancyhf{}
+    \renewcommand{\headrulewidth}{1.5pt}
+    \renewcommand{\footrulewidth}{1.5pt}
+    \lhead{}
+    \rhead{}
+    \chead{\MYTITLE}
+    \lfoot{\today}
+    \rfoot{Page \thepage \hspace{1pt} of \pageref{LastPage}}
+    \cfoot{\MYNAME}
+}
+\geometry{
+    a4paper,
+    left=30mm,
+    right=20mm,
+    top=30mm,
+    bottom=30mm,
+    headsep=10mm,
+    footskip=15mm}
+
+\pagestyle{mainPage}
+
+\renewcommand{\baselinestretch}{1.3}
+\parindent=40pt
+\parskip=20pt plus 30pt
+
+\pagecolor{white}
+\color{black}

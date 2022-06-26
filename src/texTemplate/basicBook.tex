@@ -1,0 +1,29 @@
+\def\MYTITLE{Sample book}
+\def\MYNAME{Artic42}
+
+\input{bookTemplate}
+\input{orangeBackground}
+
+
+\begin{document}
+
+    \title{\MYTITLE}
+    \author{\MYNAME}
+    \date{\today}
+    \maketitle
+
+
+    \tableofcontents
+    \thispagestyle{chapterPage}
+    \chapter{This is the first chapter}
+    \thispagestyle{chapterPage}
+    \lipsum[1]
+        \section{This is a section}
+        \lipsum[5-15]
+        \section{This is another section}
+        \lipsum[13]
+    \chapter{This is chapter two}
+    \thispagestyle{chapterPage}
+    \lipsum[8-13]
+    
+\end{document}

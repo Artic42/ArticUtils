@@ -119,7 +119,15 @@ src/thoth/thothTest.app: lib/c-cpp/thoth_D.lib src/thoth/test.c Artic42_D
 	@$(CC) $(CFLAGSD) $(IPATH) lib/c-cpp/thoth_D.lib lib/c-cpp/Artic42_D.lib src/thoth/test.c -o src/thoth/thothTest.app
 	@./src/thoth/thothTest.app
 	@rm -f src/thoth/thothTest.app
+# Documentation
 
+documentation: doc/UTIL-12-PublicationScript.pdf
+
+doc/UTIL-12-PublicationScript.pdf: doc/UTIL-12/*.tex
+	@xelatex doc/UTIL-12/PublicationScript.tex
+	@xelatex doc/UTIL-12/PublicationScript.tex
+	@cp PublicationScript.pdf doc/UTIL-12-PublicationScript.pdf
+	@rm PublicationScript*
 # General
 
 install: all

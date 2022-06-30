@@ -14,6 +14,8 @@
 
     \begin{abstract}
         The objective of this script is to automatically upload a file to OneDrive. This will allow to check the documents from any device. And will allow to easily link the docs to JIRA tasks without take space in the server.
+
+        Call the script and add the path to the pdf and to the tex file as arguments.
     \end{abstract}
 
     \section{Folder structure}
@@ -29,8 +31,57 @@
     .2 ProjectName2.
     }
     \renewcommand{\baselinestretch}{1}
-    \section{Rest-library}
+    \section{Library}
+    This script uses the oneDriveFileManagement library present on project ArticUtils.
     \section{Algorithm}
+    The script will ask for a path to the document. In this document the following lines will exist in order to give the necessary data for the publishing.
+    \begin{verbatim}
+        \def\FILENAME{$The filename$}
+        \def\PROJECT{$ProjectName$}
+        \def\EPIC{$Epic name$}
+    \end{verbatim}
+    \begin{algorithm}[h!]
+        \caption{Publish document main function}
+    \begin{algorithmic}
+        \Function{publishDocument}{$path, pathTex$}
+        \State getFileName($pathTex$)
+        \State getProjectName($pathTex$)
+        \State getEpicName($pathTex$)
+        \State Authenticate in OneDrive
+        \If{$Project folder exists \neq TRUE$}
+            \State Create project folder
+        \EndIf
+        \If{$Epic folder exists \neq TRUE$}
+            \State Create epic folder
+        \EndIf
+        \State Copy file into folder
+        \State Print link to the file
+        \State Close connection
+        \EndFunction
+    \end{algorithmic}
+    \end{algorithm}
+
+    \subsection{getFileName}
+        \begin{algorithm}[h!]
+            \caption{Get the file name from the tex file}
+        \begin{algorithmic}
+            \Function{publishDocument}{$path, pathTex$}
+            \State Open tex file
+            \State Find the line containing $\textbackslash DEF \textbackslash FILENAME$
+            \State Eliminate everything before \{
+            \State Eliminate everything after \}
+            \State \Return Line
+            \EndFunction
+        \end{algorithmic}
+        \end{algorithm}
+
+    \subsection{getProjectName and getEpicName}
+        Same as getFileName but instead of look for line containing
+        \begin{verbatim}
+            \DEF\PROJECT
+            \DEF\EPIC
+        \end{verbatim}
 
     \section{Test}
+    Publish this file an check if it works
 \end{document}

@@ -42,10 +42,10 @@
     \begin{algorithm}[h!]
         \caption{Publish document main function}
     \begin{algorithmic}
-        \Function{publishDocument}{$path, pathTex$}
-        \State getFileName($pathTex$)
-        \State getProjectName($pathTex$)
-        \State getEpicName($pathTex$)
+        \Function{publishDocument}{path, pathTex}
+        \State getFileName(pathTex)
+        \State getProjectName(pathTex)
+        \State getEpicName(pathTex)
         \State Authenticate in OneDrive
         \If{$Project folder exists \neq TRUE$}
             \State Create project folder
@@ -66,9 +66,9 @@
         \begin{algorithm}[h!]
             \caption{Get the file name from the tex file}
         \begin{algorithmic}
-            \Function{publishDocument}{$path, pathTex$}
+            \Function{publishDocument}{path, pathTex}
             \State Open tex file
-            \State Find the line containing $\textbackslash DEF \textbackslash FILENAME$
+            \State Find the line containing \textbackslash DEF\textbackslash FILENAME
             \State Eliminate everything before \{
             \State Eliminate everything after \}
             \State \Return Line

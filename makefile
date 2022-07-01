@@ -126,8 +126,12 @@ documentation: doc/UTIL-12-PublicationScript.pdf
 doc/UTIL-12-PublicationScript.pdf: doc/UTIL-12/*.tex
 	@xelatex doc/UTIL-12/PublicationScript.tex
 	@xelatex doc/UTIL-12/PublicationScript.tex
+	@cp PublicationScript.pdf doc/UTIL-12-PublicationScript_Printable.pdf
+	@cat ~/Templates/tex/orangeBackground.tex doc/UTIL-12/PublicationScript.tex >> PublicationScript.tex
+	@xelatex doc/UTIL-12/PublicationScript.tex
+	@xelatex doc/UTIL-12/PublicationScript.tex
 	@cp PublicationScript.pdf doc/UTIL-12-PublicationScript.pdf
-	@rm PublicationScript*
+#	@rm PublicationScript*
 # General
 
 install: all

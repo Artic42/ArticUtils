@@ -90,10 +90,10 @@ lib/python/hermes.py: src/hermes/hermes.py
 	
 # Python Library
 
-pythonLib: lib/python/modifyFile.py lib/python/readExcel.py
+pythonLib: lib/python/fileManager.py lib/python/readExcel.py
 
-lib/python/modifyFile.py: src/pythonLib/modifyFile.py
-	@cp src/pythonLib/modifyFile.py lib/python/modifyFile.py
+lib/python/fileManager.py: src/pythonLib/fileManager.py
+	@cp src/pythonLib/fileManager.py lib/python/fileManager.py
 
 lib/python/readExcel.py: src/pythonLib/readExcel.py
 	@cp src/pythonLib/readExcel.py lib/python/readExcel.py

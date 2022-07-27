@@ -7,3 +7,11 @@ def replaceString (path, old, new):
 def copyFile (referencePath, destPath):
     command = "cp -f " + referencePath + " " + destPath
     os.system (command)
+
+def createDirectory (dirPath):
+    if os.path.isdir(dirPath)==False:
+        os.mkdir (dirPath)
+
+def deleteFile (filePath):
+    if os.path.isfile (filePath):
+        os.remove(filePath)

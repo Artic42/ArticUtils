@@ -90,7 +90,7 @@ lib/python/hermes.py: src/hermes/hermes.py
 	
 # Python Library
 
-pythonLib: lib/python/modifyFile.py lib/python/readExcel.py lib/python/fileManagement.py
+pythonLib: lib/python/modifyFile.py lib/python/readExcel.py lib/python/fileManagement.py lib/python/sqliteConnection.py
 
 lib/python/modifyFile.py: src/pythonLib/modifyFile.py
 	@cp src/pythonLib/modifyFile.py lib/python/modifyFile.py
@@ -100,6 +100,9 @@ lib/python/readExcel.py: src/pythonLib/readExcel.py
 
 lib/python/fileManagement.py: src/pythonLib/fileManagement.py
 	@cp src/pythonLib/fileManagement.py lib/python/fileManagement.py
+
+lib/python/sqliteConnection.py: src/pythonLib/sqliteConnection.py
+	@cp src/pythonLib/sqliteConnection.py lib/python/sqliteConnection.py
 
 #Thoth
 

@@ -13,8 +13,11 @@ def moveFile (referencePath, destPath):
     command = "mv -f " + referencePath + " " + destPath
     os.system (command)
 
+def checkExistsFile(filePath):
+    return os.path.isfile (filePath)
+
 def deleteFile (filePath):
-    if os.path.isfile (filePath):
+    if checkExistsFile(filePath):
         os.remove(filePath)
 
 def copyDir (referencePath, destPath):

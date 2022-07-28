@@ -11,6 +11,14 @@ class sqliteConnection ():
     
     def executeCommand (self, command):
         self.cursor.execute (command)
+    
+    def readEntry (self, columns, table):
+        self.cursor.execute ("SELECT " + columns + " FROM " + table + ";")
+        return self.cursor.fetchall
+
+    def readEntryFiltered (self, columns, table, filter):
+        self.cursor.execute ("SELECT " + columns + " FROM " + table + " WHERE " + filter + ";")
+        return self.cursor.fetchall()
 
     def commitClose(self):
         self.con.commit()

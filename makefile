@@ -90,7 +90,7 @@ lib/python/hermes.py: src/hermes/hermes.py
 	
 # Python Library
 
-pythonLib: lib/python/modifyFile.py lib/python/readExcel.py lib/python/fileManagement.py lib/python/sqliteEngine.py
+pythonLib: lib/python/modifyFile.py lib/python/readExcel.py lib/python/fileManagement.py lib/python/sqliteEngine.py lib/python/date_time.py
 
 lib/python/modifyFile.py: src/pythonLib/modifyFile.py
 	@cp src/pythonLib/modifyFile.py lib/python/modifyFile.py
@@ -103,6 +103,9 @@ lib/python/fileManagement.py: src/pythonLib/fileManagement.py
 
 lib/python/sqliteEngine.py: src/pythonLib/sqliteEngine.py
 	@cp src/pythonLib/sqliteEngine.py lib/python/sqliteEngine.py
+
+lib/python/date_time.py: src/pythonLib/date_time.py
+	@cp src/pythonLib/date_time.py lib/python/date_time.py
 
 #Thoth
 
@@ -124,6 +127,9 @@ src/thoth/thothTest.app: lib/c-cpp/thoth_D.lib src/thoth/test.c Artic42_D
 	@rm -rf logs
 	@$(CC) $(CFLAGSD) $(IPATH) lib/c-cpp/thoth_D.lib lib/c-cpp/Artic42_D.lib src/thoth/test.c -o src/thoth/thothTest.app
 	@./src/thoth/thothTest.app
+	@cp ./src/thoth/thoth.py ~/.lib/python/thothNew.py
+	@python ./src/thoth/test.py
+	@rm ~/.lib/python/thothNew.py
 	@rm -f src/thoth/thothTest.app
 
 # General

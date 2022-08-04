@@ -39,3 +39,29 @@ def deleteDir (path):
 def getFilesInDir (path):
     result = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
     return result
+
+class fileIO:
+    def __init__ (self):
+        pass
+    
+    def openFile2Write (self,path):
+        self.FP = open (path, 'w')
+
+    def openFile2Read (self,path):
+        self.FP = open (path, 'r')
+
+    def openFile2Append (self,path):
+        self.FP = open (path, 'a')
+
+    def addLine (self, line):
+        self.FP.write (line + "\n")
+        self.FP.flush()
+    
+    def readAllLines (self):
+        return self.FP.readlines()
+    
+    def readLine (self, lineNumber):
+        return self.FP.readlines()[lineNumber]
+
+    def closeFile (self):
+        self.FP.close

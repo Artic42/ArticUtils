@@ -5,6 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "testThothPython",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/thoth/test.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
             "name": "testToth",
             "type": "cppdbg",
             "request": "launch",
@@ -22,12 +30,11 @@
                     "ignoreFailures": true
                 },
                 {
-                    "description":  "Set Disassembly Flavor to Intel",
+                    "description": "Set Disassembly Flavor to Intel",
                     "text": "-gdb-set disassembly-flavor intel",
                     "ignoreFailures": true
                 }
             ]
         }
-
     ]
 }

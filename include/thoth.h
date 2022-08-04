@@ -32,7 +32,9 @@ Tested on:    WSL 2 Debian
 #define SAFETY_WARNING 0X08
 #define ALARM 0X10
 #define SAFETY_ALARM 0X20
-#define SAFETY_ERROR 0X40
+#define COMUNNICATION_SEND 0X40
+#define COMUNNICATION_REC 0x80
+#define ERROR 0x100
 
 /****************************************
 *	Public Struct                       * 
@@ -43,8 +45,9 @@ struct log
     char name [MAX_NAME_LENGTH];
     char directoryPath [MAX_PATH_LENGTH];
     FILE *filePointer;
-    char mask;
+    int mask;
     int entriesOnFile;
+    int entryLimit;
     struct log *prvLog;
     struct log *nxtLog;
 };
@@ -53,12 +56,12 @@ struct log
 *	Public Function Prototype           * 
 ****************************************/
 
-struct log* createLog (str name, str path, char mask, int entries);
+struct log* createLog (str name, str path, int mask, int entries);
 void closeLog (struct log* logPointer);
 void closeAllLog (void);
-void addEntry (char mask, str Message);
-void addMask (struct log* logPointer, char mask);
-void delMask (struct log* logPointer, char mask);
+void addEntry (int mask, str Message);
+void addMask (struct log* logPointer, int mask);
+void delMask (struct log* logPointer, int mask);
 
 
 

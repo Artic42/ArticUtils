@@ -9,7 +9,7 @@ IPATH = -Iinclude
 
 # All
 
-all: Artic42 hermes herald pythonLib
+all: Artic42 hermes herald pythonLib thoth
 
 
 # Artic42
@@ -112,7 +112,7 @@ lib/python/date_time.py: src/pythonLib/date_time.py
 thoth_R: lib/c-cpp/thoth.lib Artic42_R
 thoth_D: lib/c-cpp/thoth_D.lib Artic42_D
 thoth_py: lib/python/thoth.py
-thoth: thoth_D thoth_R
+thoth: thoth_D thoth_R thoth_py
 	@cp src/thoth/thoth.h include/thoth.h
 
 thothTest: src/thoth/thothTest.app thoth_D
@@ -122,6 +122,9 @@ lib/c-cpp/thoth.lib: src/thoth/thoth.* Artic42_R
 
 lib/c-cpp/thoth_D.lib: src/thoth/thoth.* Artic42_D
 	@${CC} ${OFLAGSD} ${IPATH} src/thoth/thoth.c -o lib/c-cpp/thoth_D.lib
+
+lib/python/thoth.py: src/thoth/thoth.py
+	@cp src/thoth/thoth.py lib/python/thoth.py
 
 src/thoth/thothTest.app: lib/c-cpp/thoth_D.lib src/thoth/test.c Artic42_D
 	@rm -rf logs

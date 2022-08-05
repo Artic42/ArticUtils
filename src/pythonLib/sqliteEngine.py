@@ -2,7 +2,7 @@ import sqlite3
 import fileManagement
 
 def checkDatabaseExist(dbPath):
-    fileManagement.checkExistsFile(dbPath)
+    return fileManagement.checkExistsFile(dbPath)
 
 class sqliteConnection ():
     def __init__(self, dbPath):

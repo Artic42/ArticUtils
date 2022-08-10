@@ -53,11 +53,11 @@ def getMaskName (mask):
         return "ERROR"
 
 def calculateString (Message, mask):
-    now = date_time.now()
-    result1 = now.year_s + "/" + now.month_s + "/" + now.day_s + " "
-    result2 = now.hour_s + ":" + now.minute_s + ":" + now.second_s + " "
-    result3 = "- " + getMaskName (mask) + " - "
-    return result1 + result2 + result3 + Message
+    date = date_time.datetime()
+    date.now()
+    result1 = date.createString()
+    result2 = " - " + getMaskName (mask) + " - "
+    return result1 + result2 + Message
 
 class log:
 #Public methods

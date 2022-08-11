@@ -1,6 +1,6 @@
 from datetime import datetime
 
-class datetime:
+class createDate:
     def __init__ (self):
         pass
 

@@ -53,7 +53,7 @@ def getMaskName (mask):
         return "ERROR"
 
 def calculateString (Message, mask):
-    date = date_time.datetime()
+    date = date_time.createDate()
     date.now()
     result1 = date.createString()
     result2 = " - " + getMaskName (mask) + " - "
@@ -85,9 +85,10 @@ class log:
 #Private methods
     def openLogFile (self):
         path1 = self.directoryPath + "/" + self.name + "_"
-        now = date_time.now()
-        path2 = now.year_s + now.month_s + now.day_s + "_"
-        path3 = now.hour_s + now.minute_s + now.second_s + ".log"
+        date = date_time.createDate()
+        date.now()
+        path2 = date.year_s + date.month_s + date.day_s + "_"
+        path3 = date.hour_s + date.minute_s + date.second_s + ".log"
         path = path1 + path2 + path3
 
         fileManagement.createDir(self.directoryPath)

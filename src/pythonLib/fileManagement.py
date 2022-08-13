@@ -16,6 +16,12 @@ def moveFile (referencePath, destPath):
 def checkExistsFile(filePath):
     return os.path.isfile (filePath)
 
+def checkFileEmpty (filePath):
+    return os.path.getsize (filePath) == 0
+
+def checkFileNotEmpty (filePath):
+    return not checkFileEmpty (filePath)
+
 def deleteFile (filePath):
     if checkExistsFile(filePath):
         os.remove(filePath)

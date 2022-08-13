@@ -21,11 +21,11 @@ class sqliteConnection ():
         return self.cursor.fetchall()
 
     def entryExistsOnTable (self, table, condition):
-        entry = self.cursor.execute (f"SELECT TOP 1 * FROM {table} WHERE {condition};")
+        entry = self.cursor.execute (f"SELECT * FROM {table} WHERE {condition};")
         if entry == []:
-            return False
-        else:
             return True
+        else:
+            return False
     
     def deleteEntryFromTable (self, table, condition):
         self.cursor.execute (f"DELETE FROM {table} WHERE {condition};")

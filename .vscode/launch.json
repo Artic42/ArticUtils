@@ -13,6 +13,14 @@
             "justMyCode": true
         },
         {
+            "name": "testDateTime",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/pythonLib/test/testDateTime.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
             "name": "testHermes",
             "type": "python",
             "request": "launch",

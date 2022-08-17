@@ -31,6 +31,7 @@ int file2int (str  path);
 void float2file (str path, float value);
 float file2float (str path);
 void str2file (str path, str value);
+void file2str (str path, str result);
 void file2print (str path);
 void char2file (str path, char value);
 char file2char (str path, int offset);

@@ -14,6 +14,9 @@ def moveFile (referencePath, destPath):
     command = "mv -f " + referencePath + " " + destPath
     os.system (command)
 
+def createFile (path):
+    os.system (f"touch {path}")
+
 def checkExistsFile(filePath):
     return os.path.isfile (filePath)
 
@@ -84,11 +87,10 @@ class fileIO:
         self.FP.write (line + "\n")
         self.FP.flush()
 
-    def readJson (self, path):
-        self.openFile2Read(path)
-        result = json.load(self.FP)
-        self.closeFile
-        return result
+    def writeList (self, list):
+        for item in list:
+            self.FP.write (item + "\n")
+        self.FP.flush()
 
     def writeJson (self, path, jsonContent):
         self.openFile2Write(path)
@@ -96,10 +98,18 @@ class fileIO:
         self.closeFile
         
     def readAllLines (self):
-        return self.FP.readlines()
+        lines = self.FP.readlines()
+        lines = [line[-1] for line in lines]
+        return lines
     
     def readLine (self, lineNumber):
-        return self.FP.readlines()[lineNumber]
+        return self.FP.readlines()[lineNumber][:-1]
+
+    def readJson (self, path):
+        self.openFile2Read(path)
+        result = json.load(self.FP)
+        self.closeFile
+        return result
 
     def closeFile (self):
         self.FP.close

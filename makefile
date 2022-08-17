@@ -33,3 +33,4 @@ clean:
 	@rm -f src/thoth/test/mergedLog.log
 	@rm -f src/thoth/test/filteredMask.log
 	@rm -f src/thoth/test/filteredName.log
+	@rm -f src/hermes/test/result.txt

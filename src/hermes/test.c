@@ -94,13 +94,10 @@ int main (void)
     if (testChar != file2char (testPath, 0))
     {
         printf ("Test fails, file2char or char2file don't work\n");
-        //return 1;
+        return 1;
     }
 
     //test str
-    str2file (testPath, testPath);
-    file2print (testPath);
-    printf ("%s \n", testPath);
-    printf ("TEST OK, if last 2 lines are the same.\n");
+    str2file ("src/hermes/test/result.txt", "TEST OK\n");
     return 0;
 }

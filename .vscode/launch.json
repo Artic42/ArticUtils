@@ -13,6 +13,14 @@
             "justMyCode": true
         },
         {
+            "name": "testHermes",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/hermes/test/test.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
             "name": "testThothPython",
             "type": "python",
             "request": "launch",

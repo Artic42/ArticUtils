@@ -52,3 +52,16 @@ def file2string (path):
 
 def char2file (path, value):
     string2file (path, value)
+
+def file2list (path):
+    file = open (path, 'r')
+    value = file.readlines ()
+    value = [line[:-1] for line in value]
+    file.close()
+    return value
+
+def list2file (path, list):
+    file = open (path, 'w')
+    for line in list:
+        file.write(line + "\n")
+    file.close()

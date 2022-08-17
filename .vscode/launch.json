@@ -5,15 +5,23 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "testThothPython",
+            "name": "testThoth",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/src/thoth/test.py",
+            "program": "${workspaceFolder}/src/thoth/test/test.py",
             "console": "integratedTerminal",
             "justMyCode": true
         },
         {
-            "name": "testToth",
+            "name": "testThothPython",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/thoth/test/testThoth.py",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
+            "name": "testTothC",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/src/thoth/thothTest.app",

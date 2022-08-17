@@ -26,6 +26,7 @@ void calculateString  (str Message, int mask);
 void addLog2List (struct log* logPointer);
 void removeLog2List (struct log* logPointer);
 FILE* openLogFile (struct log* logPointer);
+void calculateFirstLine (struct log* logPointer, dateTime today);
 void closeLogFile (struct log* logPointer);
 
 /****************************************
@@ -37,6 +38,7 @@ struct log *lastLog = NULL;
 char messageBuffer [MAX_MSG_LENGTH+512];
 char pathBuffer [MAX_PATH_LENGTH+MAX_NAME_LENGTH+50];
 char maskBuffer [32];
+char lineBuffer [MAX_FILE_LENGTH+50];
 
 /****************************************
 *   Private constants                   *
@@ -210,13 +212,26 @@ FILE* openLogFile (struct log* logPointer)
     if (pathExists(pathBuffer) == BFALSE)
     {
         FP = openFile2Write (pathBuffer);
-        addLine2File (logPointer->name, FP);
+        calculateFirstLine (logPointer, today);
+        addLine2File (lineBuffer, FP);
     }
     else
     {
         FP = openFile2Append (pathBuffer);
     }
     return FP;
+}
+
+void calculateFirstLine (struct log* logPointer, dateTime today)
+{
+    char dateString1 [32], dateString2 [32];
+    sprintf(dateString1, "%04d/%02d/%02d ", today.year, today.month, today.day);
+    sprintf (dateString2, "%02d:%02d:%02d", today.hour, today.min, today.sec);
+    strcpy (lineBuffer, logPointer->name);
+    strcat (lineBuffer, " - ");
+    strcat (lineBuffer, dateString1);
+    strcat (lineBuffer, dateString2);
+
 }
 
 void closeLogFile (struct log* logPointer)

@@ -1,0 +1,11 @@
+mergedLog - 2022/07/16 21:41:41
+2022/07/16 21:41:41 - Log3 - DEBUG - This message should appear on 2 and 3
+2022/07/16 21:41:41 - Log2 - DEBUG - This message should appear on 2 and 3
+2022/07/16 21:41:42 - Log3 - INFO - This message should appear on 1 and 3
+2022/07/16 21:41:42 - Log1 - INFO - This message should appear on 1 and 3
+2022/07/16 21:41:44 - Log2 - DEBUG - This message should appear on 2 and 1
+2022/07/16 21:41:44 - Log1 - DEBUG - This message should appear on 2 and 1
+2022/07/16 21:41:45 - Log3 - INFO - This message should appear on 1 and 3
+2022/07/16 21:41:45 - Log1 - INFO - This message should appear on 1 and 3
+2022/07/16 21:41:47 - Log1 - DEBUG - This message should appear on 1
+2022/07/16 21:41:48 - Log1 - INFO - This message should appear on 1

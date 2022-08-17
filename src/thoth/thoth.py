@@ -80,7 +80,7 @@ class log:
         self.mask = self.mask | mask
 
     def delMask (self, mask):
-        self.mask = self.mask | (~mask)
+        self.mask = self.mask & (~mask)
 
 #Private methods
     def openLogFile (self):
@@ -96,7 +96,9 @@ class log:
 
         if fileManagement.checkExistsFile(path) == False:
             file.openFile2Write(path)
-            file.addLine(self.name)
+            creationDate = date_time.createDate()
+            creationDate.now()
+            file.addLine(f"{self.name} - {creationDate.createString()}")
         else:
             file.openFile2Append(path)
         

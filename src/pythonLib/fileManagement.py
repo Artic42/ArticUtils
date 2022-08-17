@@ -34,9 +34,16 @@ def moveDir (referencePath, destPath):
     command = "mv -rf " + referencePath + " " + destPath
     os.system (command)
 
+def cleanDir (dirPath):
+    files = getFilesInDir (dirPath)
+    for file in files:
+        deleteFile (dirPath + "/" + file)
+
 def createDir (dirPath):
     if os.path.isdir(dirPath)==False:
         os.mkdir (dirPath)
+
+        
 
 def deleteDir (path):
     command = "rm -rf " + path
@@ -45,6 +52,19 @@ def deleteDir (path):
 def getFilesInDir (path):
     result = [f for f in os.listdir(path) if os.path.isfile(os.path.join(path, f))]
     return result
+
+def filesInDirAreEqual (path1, path2):
+    files1 = getFilesInDir (path1)
+    files2 = getFilesInDir (path2)
+    if files1 != files2:
+        return False
+    for file in files1:
+        os.system (f"diff {path1}/{file} {path2}/{file} | tee diff")
+        if checkFileNotEmpty ("diff"):
+            deleteFile ("diff")
+            return False
+    deleteFile ("diff")
+    return True
 
 class fileIO:
     def __init__ (self):

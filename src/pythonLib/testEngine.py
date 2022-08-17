@@ -1,4 +1,9 @@
+
 import thoth
+
+def startTest():
+    global env
+    env = enviroment()
 
 class enviroment:
     def __init__ (self):
@@ -14,7 +19,6 @@ class enviroment:
         self.testPassed = self.testPassed + 1
 
     def skipTest (self):
-        self.testExecuted = self.testExecuted + 1
         self.testSkipped = self.testSkipped + 1
 
     def failTest (self):
@@ -42,3 +46,9 @@ class enviroment:
         thoth.addEntry (thoth.INFO,f"{self.testPassed} tests have PASS")
         thoth.addEntry (thoth.INFO,f"{self.testFailed} tests have FAILED")
         thoth.addEntry (thoth.INFO,f"{self.testSkipped} tests have SKIPPED")
+
+    def isPassed (self):
+        return self.passed
+    
+    def isFailed (self):
+        return self.failed

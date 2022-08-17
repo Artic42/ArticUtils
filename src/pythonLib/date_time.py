@@ -44,3 +44,32 @@ class createDate:
         self.hour = int(self.hour_s)
         self.minute = int(self.minute_s)
         self.second = int(self.second_s)
+
+
+
+def isEarliest (date1, date2):
+    if date1.year < date2.year:
+        return True
+    elif date1.year > date2.year:
+        return False
+    if date1.month < date2.month:
+        return True
+    elif date1.month > date2.month:
+        return False
+    if date1.day < date2.day:
+        return True
+    elif date1.day > date2.day:
+        return False
+    if date1.hour < date2.hour:
+        return True
+    elif date1.hour > date2.hour:
+        return False
+    if date1.minute < date2.minute:
+        return True
+    elif date1.minute > date2.minute:
+        return False
+    if date1.second < date2.second:
+        return True
+    elif date1.second > date2.second:
+        return False
+    return True

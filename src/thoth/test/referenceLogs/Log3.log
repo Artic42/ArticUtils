@@ -1,0 +1,4 @@
+Log3 - 2022/07/16 21:41:41
+2022/07/16 21:41:41 - DEBUG - This message should appear on 2 and 3
+2022/07/16 21:41:42 - INFO - This message should appear on 1 and 3
+2022/07/16 21:41:45 - INFO - This message should appear on 1 and 3

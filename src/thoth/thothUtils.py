@@ -5,6 +5,9 @@ import os
 import sys
 
 
+if __name__ == "__main__":
+    pass
+
 def joinLog(dirPath, name, outputPath):
     logs = logList (dirPath)
     result = logs.filterAndJoinLog (name)
@@ -14,6 +17,18 @@ def mergeLog(dirPath, name, outputPath):
     logs = logList (dirPath)
     result = logs.mergeLog (name)
     result.writeLog(outputPath)
+
+def filterByName (logPath, name, outputPath):
+    newLog = log()
+    newLog.readPath (logPath)
+    newLog = newLog.filterEntryByName (name)
+    newLog.writeLog (outputPath)
+
+def filterByMask (logPath, mask, outputPath):
+    newLog = log()
+    newLog.readPath (logPath)
+    newLog = newLog.filterEntryByMask (mask)
+    newLog.writeLog (outputPath)
 
 def logsAreEqual (log1Path, log2Path):
     log1 = log()
@@ -153,6 +168,26 @@ class log:
 
     def removeFirstEntry (self):
         self.logEntries.remove(self.logEntries[0])
+
+    def filterEntryByName (self, name):
+        newLog = log()
+        newLog.name = name
+        newLog.date = self.date
+        for entry in self.logEntries:
+            if entry.name == name:
+                newLog.logEntries.append(entry)
+        return newLog
+
+    def filterEntryByMask (self, mask):
+        newLog = log()
+        newLog.name = self.name
+        newLog.date = self.date
+        newLog.merged = self.merged
+        for entry in self.logEntries:
+            if entry.mask == mask:
+                newLog.logEntries.append(entry)
+        return newLog
+
     
 
 class logEntry:

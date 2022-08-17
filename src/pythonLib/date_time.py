@@ -45,8 +45,6 @@ class createDate:
         self.minute = int(self.minute_s)
         self.second = int(self.second_s)
 
-
-
 def isEarliest (date1, date2):
     if date1.year < date2.year:
         return True

@@ -2,6 +2,7 @@ import testEngine
 import fileManagement
 import os
 import thothUtils
+import thoth
 
 def main():
     global refPath
@@ -35,6 +36,24 @@ def main():
     if testEngine.env.isPassed():
         thothUtils.mergeLog("src/thoth/test/referenceLogs", "mergedLog", "src/thoth/test/mergedLog.log")
         if thothUtils.logsAreEqual ("src/thoth/test/mergedLog.log", "src/thoth/test/mergedLogRef.log"):
+            testEngine.env.passTest()
+        else:
+            testEngine.env.failTest()
+    else:
+        testEngine.env.skipTest
+
+    if testEngine.env.isPassed():
+        thothUtils.filterByMask("src/thoth/test/mergedLogRef.log", thoth.getMaskName(thoth.INFO), "src/thoth/test/filteredMask.log")
+        if thothUtils.logsAreEqual ("src/thoth/test/filteredMask.log", "src/thoth/test/filteredMaskRef.log"):
+            testEngine.env.passTest()
+        else:
+            testEngine.env.failTest()
+    else:
+        testEngine.env.skipTest
+
+    if testEngine.env.isPassed():
+        thothUtils.filterByName("src/thoth/test/mergedLogRef.log", "Log1", "src/thoth/test/filteredName.log")
+        if thothUtils.logsAreEqual ("src/thoth/test/filteredName.log", "src/thoth/test/referenceLogs/Log1.log"):
             testEngine.env.passTest()
         else:
             testEngine.env.failTest()

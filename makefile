@@ -31,3 +31,5 @@ clean:
 	@rm -f lib/python/*.py
 	@rm -rf src/thoth/test/logs src/thoth/test/py_logs
 	@rm -f src/thoth/test/mergedLog.log
+	@rm -f src/thoth/test/filteredMask.log
+	@rm -f src/thoth/test/filteredName.log

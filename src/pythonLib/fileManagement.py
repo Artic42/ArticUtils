@@ -1,4 +1,5 @@
 import os
+import json
 
 
 def replaceString (path, old, new):
@@ -82,7 +83,18 @@ class fileIO:
     def addLine (self, line):
         self.FP.write (line + "\n")
         self.FP.flush()
-    
+
+    def readJson (self, path):
+        self.openFile2Read(path)
+        result = json.load(self.FP)
+        self.closeFile
+        return result
+
+    def writeJson (self, path, jsonContent):
+        self.openFile2Write(path)
+        json.dump(jsonContent, self.FP)
+        self.closeFile
+        
     def readAllLines (self):
         return self.FP.readlines()
     

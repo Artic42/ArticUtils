@@ -5,6 +5,7 @@ import thothUtils
 import thoth
 
 def main():
+    print ("Testing Thoth")
     global refPath
     refPath = "src/thoth/test/referenceLogs"
     cleanLogFolder()
@@ -59,6 +60,7 @@ def main():
             testEngine.env.failTest()
     else:
         testEngine.env.skipTest
+    print ("Thoth test finished")
 
 def cleanLogFolder():
     fileManagement.createDir ("src/thoth/test/logs")

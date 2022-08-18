@@ -2,6 +2,7 @@ import testEngine
 import date_time
 
 def main():
+    print ("Testing date_time")
     date1 = date_time.createDate ()
     date2 = date_time.createDate ()
     if testEngine.env.isPassed ():
@@ -84,6 +85,7 @@ def main():
             testEngine.env.failTest()
     else:
         testEngine.env.skipTest ()
+    print ("Date_time test finnished")
 
 if __name__ == "__main__":
     testEngine.startTest()

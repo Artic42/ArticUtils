@@ -21,7 +21,6 @@ lib/python/thoth.py: src/thoth/thoth.py
 lib/python/thothUtils.py: src/thoth/thothUtils.py
 	@cp src/thoth/thothUtils.py lib/python/thothUtils.py
 
-
 src/thoth/thothTest.app: lib/c-cpp/thoth_D.lib src/thoth/test/test.c Artic42_D
 	@rm -rf logs
 	@$(CC) $(CFLAGSD) $(IPATH) lib/c-cpp/thoth_D.lib lib/c-cpp/Artic42_D.lib src/thoth/test/test.c -o src/thoth/thothTest.app

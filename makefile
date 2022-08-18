@@ -18,11 +18,16 @@ all: Artic42 hermes herald pythonLib thoth
 
 # General
 
+test: install
+	@echo Test of articUtils library test initiated
+	@python3 test/testArticUtils.py
+
 install: all
-	@mkdir -p ~/.bin/ ~/.include ~/.lib/ ~/Templates/tex/
+	@mkdir -p ~/.bin/ ~/.include ~/.lib/ ~/Templates/tex/ ~/.test/
 	@cp -rf bin/* ~/.bin/
 	@cp -rf include/* ~/.include/
 	@cp -rf lib/* ~/.lib/
+	@cp -rf test/* ~/.test/
 	@cp -rf src/texTemplate/* ~/Templates/tex/
 
 clean:

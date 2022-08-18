@@ -8,7 +8,7 @@
             "name": "testThoth",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/src/thoth/test/test.py",
+            "program": "${workspaceFolder}/test/testThoth.py",
             "console": "integratedTerminal",
             "justMyCode": true
         },
@@ -16,7 +16,7 @@
             "name": "testDateTime",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/src/pythonLib/test/testDateTime.py",
+            "program": "${workspaceFolder}test/testDateTime.py",
             "console": "integratedTerminal",
             "justMyCode": true
         },
@@ -24,7 +24,7 @@
             "name": "testHermes",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}/src/hermes/test/test.py",
+            "program": "${workspaceFolder}test/testHermes.py",
             "console": "integratedTerminal",
             "justMyCode": true
         },

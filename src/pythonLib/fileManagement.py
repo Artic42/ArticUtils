@@ -99,7 +99,7 @@ class fileIO:
         
     def readAllLines (self):
         lines = self.FP.readlines()
-        lines = [line[-1] for line in lines]
+        lines = [line[:-1] for line in lines]
         return lines
     
     def readLine (self, lineNumber):

@@ -132,7 +132,9 @@ class log:
         self.logEntries = []
     
     def readPath (self, path):
-        logLines = hermes.file2list(path)
+        file = fileManagement.fileIO()
+        file.openFile2Read (path)
+        logLines = file.readAllLines ()
         firstLine = logLines[0]
         if len(logLines) > 1:
             secondLine = logLines[1]

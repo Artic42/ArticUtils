@@ -47,7 +47,7 @@ Tested on:   Windows Subsystem for Linux
 dateTime getDateTime (void)
 {
     time_t t = time (NULL);
-       dateTime s_dateTime;
+    dateTime s_dateTime;
     
     struct tm T = *localtime (&t);
 

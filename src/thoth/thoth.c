@@ -155,6 +155,9 @@ void getMaskName (int mask)
     case ERROR:
         strcpy(maskBuffer, "ERROR");
         break;
+    case THOTH:
+        strcpy(maskBuffer, "THOTH");
+        break;
     default:
         break;
     }

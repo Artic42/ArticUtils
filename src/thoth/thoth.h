@@ -35,6 +35,7 @@ Tested on:    WSL 2 Debian
 #define COMUNNICATION_SEND 0X40
 #define COMUNNICATION_REC 0x80
 #define ERROR 0x100
+#define THOTH 0x200
 
 /****************************************
 *	Public Struct                       * 

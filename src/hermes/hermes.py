@@ -1,6 +1,8 @@
 import fileManagement
+import thoth
 
 def bool2file (path, value):
+    thoth.addEntry (thoth.HERMES, f"Boolean varaible written on {path} with value {value}")
     if value:
         fileManagement.createFile (path)
     else:
@@ -8,9 +10,11 @@ def bool2file (path, value):
 
 def file2bool (path):
     value = fileManagement.checkExistsFile (path)
+    thoth.addEntry (thoth.HERMES, f"Boolean varaible read from {path} with value {value}")
     return value
 
 def int2file (path, value):
+    thoth.addEntry (thoth.HERMES, f"Integer varaible written on {path} with value {value}")
     file = fileManagement.fileIO()
     file.openFile2Write (path)
     file.addLine (str(value))
@@ -21,9 +25,11 @@ def file2int (path):
     file.openFile2Read (path)
     value = file.readLine(0)
     file.closeFile ()
+    thoth.addEntry (thoth.HERMES, f"Integer varaible read from {path} with value {value}")
     return int(value)
 
 def float2file (path, value):
+    thoth.addEntry (thoth.HERMES, f"Floating point varaible written on {path} with value {value}")
     file = fileManagement.fileIO()
     file.openFile2Write (path)
     file.addLine (str(value))
@@ -34,15 +40,18 @@ def file2float (path):
     file.openFile2Read (path)
     value = file.readLine(0)
     file.closeFile ()
+    thoth.addEntry (thoth.HERMES, f"Floating point varaible read from {path} with value {value}")
     return float(value)
 
 def string2file (path, value):
+    thoth.addEntry (thoth.HERMES, f"'{value}' written in {path}")
     file = fileManagement.fileIO()
     file.openFile2Write (path)
     file.addLine (value)
     file.closeFile ()
 
 def file2string (path):
+    thoth.addEntry (thoth.HERMES, f"'{value}' written in {path}")
     file = fileManagement.fileIO()
     file.openFile2Read (path)
     value = file.readLine(0)

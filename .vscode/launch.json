@@ -24,7 +24,7 @@
             "name": "testHermes",
             "type": "python",
             "request": "launch",
-            "program": "${workspaceFolder}test/testHermes.py",
+            "program": "${workspaceFolder}/test/testHermes.py",
             "console": "integratedTerminal",
             "justMyCode": true
         },

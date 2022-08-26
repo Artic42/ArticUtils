@@ -71,7 +71,7 @@ class logList:
         while len(self.list) != 1:
             earliest = self.list[1]
             for item in self.list:
-                if date_time.isEarliest(item.date, earliest.date):
+                if item.date.isEarlierThan(earliest.date):
                     earliest = item
             newList.append(earliest)
             self.list.remove(earliest)
@@ -81,7 +81,7 @@ class logList:
     def earliestDate (self):
         earliest = self.list[0].date
         for item in self.list:
-            if date_time.isEarliest(item.date, earliest):
+            if item.date.isEarlierThan(earliest):
                 earliest = item.date
         return earliest
 
@@ -105,8 +105,7 @@ class logList:
     def indexEarliestEntryLog (self):
         result = 0
         for i in range(len(self.list)):
-            if date_time.isEarliest(self.list[i].earliestEntryDate(),
-                                     self.list[result].earliestEntryDate()):
+            if self.list[i].earliestEntryDate().isEarlierThan(self.list[result].earliestEntryDate()):
                 result = i
         return result
 

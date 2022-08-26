@@ -1,6 +1,6 @@
 # Python Library
 
-pythonLib: lib/python/modifyFile.py lib/python/readExcel.py lib/python/fileManagement.py lib/python/sqliteEngine.py lib/python/date_time.py lib/python/testEngine.py
+pythonLib: lib/python/modifyFile.py lib/python/readExcel.py lib/python/fileManagement.py lib/python/sqliteEngine.py lib/python/date_time.py lib/python/testEngine.py lib/python/systemManagement.py
 
 lib/python/modifyFile.py: src/pythonLib/modifyFile.py
 	@cp src/pythonLib/modifyFile.py lib/python/modifyFile.py
@@ -10,6 +10,9 @@ lib/python/readExcel.py: src/pythonLib/readExcel.py
 
 lib/python/fileManagement.py: src/pythonLib/fileManagement.py
 	@cp src/pythonLib/fileManagement.py lib/python/fileManagement.py
+
+lib/python/systemManagement.py: src/pythonLib/systemManagement.py
+	@cp src/pythonLib/systemManagement.py lib/python/systemManagement.py
 
 lib/python/sqliteEngine.py: src/pythonLib/sqliteEngine.py
 	@cp src/pythonLib/sqliteEngine.py lib/python/sqliteEngine.py

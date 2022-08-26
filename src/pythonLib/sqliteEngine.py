@@ -21,8 +21,9 @@ class sqliteConnection ():
         return self.cursor.fetchall()
 
     def entryExistsOnTable (self, table, condition):
-        entry = self.cursor.execute (f"SELECT * FROM {table} WHERE {condition};")
-        if entry == []:
+        self.cursor.execute (f"SELECT * FROM {table} WHERE {condition};")
+        entry = self.curso.fetchall()
+        if len(entry) != 0:
             return True
         else:
             return False

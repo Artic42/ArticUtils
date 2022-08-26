@@ -51,11 +51,11 @@ def string2file (path, value):
     file.closeFile ()
 
 def file2string (path):
-    thoth.addEntry (thoth.HERMES, f"'{value}' written in {path}")
     file = fileManagement.fileIO()
     file.openFile2Read (path)
     value = file.readLine(0)
     file.closeFile ()
+    thoth.addEntry (thoth.HERMES, f"'{value}' written in {path}")
     return value
 
 def char2file (path, value):

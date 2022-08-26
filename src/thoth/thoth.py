@@ -52,6 +52,8 @@ def getMaskName (mask):
         return "COMMUNICATION_REC"
     if mask == ERROR:
         return "ERROR"
+    if mask == HERMES:
+        return "HERMES"
 
 def calculateString (Message, mask):
     date = date_time.createDate()

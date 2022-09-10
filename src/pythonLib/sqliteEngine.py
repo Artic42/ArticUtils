@@ -22,7 +22,7 @@ class sqliteConnection ():
 
     def entryExistsOnTable (self, table, condition):
         self.cursor.execute (f"SELECT * FROM {table} WHERE {condition};")
-        entry = self.curso.fetchall()
+        entry = self.cursor.fetchall()
         if len(entry) != 0:
             return True
         else:

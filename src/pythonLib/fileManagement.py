@@ -38,6 +38,9 @@ def moveDir (referencePath, destPath):
     command = "mv -rf " + referencePath + " " + destPath
     os.system (command)
 
+def checkExistDir (path):
+    return os.path.isdir (path)
+
 def cleanDir (dirPath):
     files = getFilesInDir (dirPath)
     for file in files:

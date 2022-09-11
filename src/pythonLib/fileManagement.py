@@ -26,6 +26,13 @@ def checkFileEmpty (filePath):
 def checkFileNotEmpty (filePath):
     return not checkFileEmpty (filePath)
 
+def filesSizeInLines (filePath):
+    file = fileIO
+    file.openFile2Read (filePath)
+    result = len(file.readAllLines())
+    file.closeFile()
+    return result
+
 def deleteFile (filePath):
     if checkExistsFile(filePath):
         os.remove(filePath)

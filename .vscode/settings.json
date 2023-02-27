@@ -5,5 +5,8 @@
         "*.ST": "st",
         "stdio.h": "c",
         "artic42.h": "c"
-    }
+    },
+    "python.analysis.extraPaths": [
+        "./src/pythonLib"
+    ]
 }

@@ -16,7 +16,8 @@ int main (void);
 *	Private Definitions	                *
 ****************************************/
 
-
+#define PAIR_1 10
+#define PAIR_2 11
 
 /****************************************
 *	Private Variables                   *
@@ -31,8 +32,10 @@ int main (void);
 int main (void)
 {
     startTUI();
-    defineColorPair(10,COLOR_BLUE, COLOR_WHITE);
-    drawMainWindow(10, 20, 10);
-    sleep(5);
+    defineColorPair(PAIR_1,COLOR_BLUE, COLOR_WHITE);
+    defineColorPair(PAIR_2,COLOR_GREEN, COLOR_WHITE);
+    WINDOW *mainWindow = drawMainWindow(20, 20, PAIR_1);
+    WINDOW *subWindow = drawSubWindow (mainWindow, 10, 10, PAIR_2, 5, 5);
+    sleep(60);
     finishTUI();
 }

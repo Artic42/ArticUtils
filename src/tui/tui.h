@@ -29,6 +29,7 @@
 WINDOW *startTUI (void);
 void finishTUI (void);
 WINDOW *drawMainWindow (int width, int height, int color);
+WINDOW *drawSubWindow (WINDOW *parentWindow, int width, int height, int color, int posY, int posX);
 void defineColorPair (int pairID, int background, int foreground);
 void defineColor (int colorID, int red, int green, int blue);
 

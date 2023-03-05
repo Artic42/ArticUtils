@@ -55,11 +55,20 @@ void finishTUI (void)
 
 WINDOW *drawMainWindow (int width, int height, int color)
 {
-    WINDOW *window = createWindowCentered(height+2, width+2);
+    WINDOW *window = createWindowCentered(height, width);
     wattr_set (window, A_BOLD, color, NULL);
-    drawWindowBorder (window);
     fillWindow (window);
+    drawWindowBorder (window);
     wrefresh(window);
+    return window;
+}
+
+WINDOW *drawSubWindow (WINDOW *parentWindow, int width, int height, int color, int posY, int posX)
+{
+    WINDOW *window = createSubWindow (parentWindow, height, width, posY, posX);
+    wattr_set (window, 0, color, NULL);
+    fillWindow (window);
+    wrefresh (window);
     return window;
 }
 
@@ -92,11 +101,11 @@ void drawWindowBorder (WINDOW *window)
 
 void fillWindow (WINDOW *window)
 {
-    int rows = getmaxy (window) - 2;
-    int cols = getmaxx (window) - 2;
-    for (int i=1; i<=rows; i++)
+    int rows = getmaxy (window);
+    int cols = getmaxx (window);
+    for (int i=0; i<=rows; i++)
     {
-        for (int j=1; j<=cols; j++)
+        for (int j=0; j<=cols; j++)
         {
             mvwprintw(window, i, j, " ");
         }

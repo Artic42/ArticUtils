@@ -3,6 +3,7 @@
 ****************************************/
 
 #include <ncurses.h>
+#include <unistd.h>
 #include "tui.h"
 
 /****************************************
@@ -31,5 +32,7 @@ int main (void)
 {
     startTUI();
     defineColorPair(10,COLOR_BLUE, COLOR_WHITE);
-    drawMainWindow(100, 50, 10);
+    drawMainWindow(10, 20, 10);
+    sleep(5);
+    finishTUI();
 }

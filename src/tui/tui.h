@@ -27,6 +27,7 @@
 ****************************************/
 
 WINDOW *startTUI (void);
+void finishTUI (void);
 WINDOW *drawMainWindow (int width, int height, int color);
 void defineColorPair (int pairID, int background, int foreground);
 void defineColor (int colorID, int red, int green, int blue);

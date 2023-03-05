@@ -5,12 +5,14 @@ CFLAGSD = -g $(CFLAGSR)
 OFLAGSR = -c $(CFLAGSR)
 OFLAGSD = -c $(CFLAGSD)
 IPATH = -Iinclude
+NCURSES = -lncurses
 
 include make/pythonLib.make
 include make/thoth.make
 include make/hermes.make
 include make/herald.make
 include make/artic42.make
+include make/TUI.make
 
 # All
 

@@ -73,6 +73,10 @@ void closeFile (FILE* FP);
 //Date and time
 dateTime getDateTime (void);
 boolean isHigher (dateTime date1, dateTime date2);
-boolean dayIsEqual (dateTime date1, dateTime date2);
+boolean dayIsEqual (dateTime date1, dateTime date2);\
+
+//ColorFunctions
+int convertColorToPercent (int8b color);
+int8b convertColorTo255 (int color);
 
 #endif

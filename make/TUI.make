@@ -14,6 +14,6 @@ lib/c-cpp/tui_D.lib: src/tui/tui.* Artic42_D
 	@${CC} ${OFLAGSD} ${IPATH} src/tui/tui.c -o lib/c-cpp/tui_D.lib
 
 src/tui/tuiTest.app: src/tui/test.c TUI_D Artic42_D
-	@${CC} ${CFLAGSD} ${IPATH}  src/tui/test.c lib/c-cpp/tui_D.lib ${NCURSES} -o src/tui/tuiTest.app
+	@${CC} ${CFLAGSD} ${IPATH}  src/tui/test.c lib/c-cpp/tui_D.lib lib/c-cpp/Artic42_D.lib ${NCURSES} -o src/tui/tuiTest.app
 	@./src/tui/tuiTest.app
 	@rm src/tui/tuiTest.app

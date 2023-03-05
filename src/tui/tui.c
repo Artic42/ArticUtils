@@ -13,6 +13,8 @@ Description: This is a library to create text interfaces with ncurses.
 #include <Artic42.h>
 #include <ncurses.h>
 
+#include "tui.h"
+
 
 
 /****************************************
@@ -29,12 +31,11 @@ void fillWindow (WINDOW *window);
 ****************************************/
 
 
-
 /****************************************
 *	Private Variables                   *
 ****************************************/
 
-
+char bufferTUI[MAX_WIDTH];
 
 /****************************************
 *	Code                                *
@@ -79,7 +80,10 @@ void defineColorPair (int8b pairID, int8b background, int8b foreground)
 
 void defineColor (int8b colorID, int8b red, int8b green, int8b blue)
 {
-    init_color (colorID, red, green, blue);
+    int red100 = convertColorToPercent (red);
+    int green100 = convertColorToPercent (green);
+    int blue100 = convertColorToPercent(blue);
+    init_color (colorID, red100, green100, blue100);
 }
 
 WINDOW *createWindowCentered (int width, int height)
@@ -92,6 +96,27 @@ WINDOW *createWindowCentered (int width, int height)
 WINDOW *createSubWindow (WINDOW *origWindow, int height, int width, int posY, int posX)
 {
     return derwin (origWindow, height, width, posY, posX);
+}
+
+void writeBufferInWindow (WINDOW *window, int posY, int posX)
+{
+    mvwprintw (window, posX, posY, "%s", bufferTUI);
+    wrefresh (window);
+}
+
+void setWindowColor (WINDOW *window, int color)
+{
+    wattr_set(window, 0, color, NULL);
+}
+
+void activateBoldInWindow (WINDOW *window)
+{
+    wattr_on (window, A_BOLD, NULL);
+}
+
+void deactivateBoldInWindow (WINDOW *window)
+{
+    wattr_off (window, A_BOLD, NULL);
 }
 
 void drawWindowBorder (WINDOW *window)

@@ -129,7 +129,7 @@ void str2file (str path, str value)
 {
     FILE *filePtr = NULL;
     filePtr = fopen (path, "w");
-    fprintf (filePtr, value);
+    fprintf (filePtr, "%s", value);
     fclose(filePtr);
 }
 

@@ -78,11 +78,11 @@ void defineColorPair (int8b pairID, int8b background, int8b foreground)
     init_pair (pairID, foreground, background);
 }
 
-void defineColor (int8b colorID, int8b red, int8b green, int8b blue)
+void defineColor (int8b colorID, color *colorValue)
 {
-    int red100 = convertColorToPercent (red);
-    int green100 = convertColorToPercent (green);
-    int blue100 = convertColorToPercent(blue);
+    int red100 = convertColorToPercent (colorValue->red);
+    int green100 = convertColorToPercent (colorValue->green);
+    int blue100 = convertColorToPercent (colorValue->blue);
     init_color (colorID, red100, green100, blue100);
 }
 

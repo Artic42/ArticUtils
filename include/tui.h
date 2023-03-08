@@ -41,7 +41,7 @@ void setWindowColor (WINDOW *window, int color);
 void activateBoldInWindow (WINDOW *window);
 void deactivateBoldInWindow (WINDOW *window);
 void defineColorPair (int8b pairID, int8b background, int8b foreground);
-void defineColor (int8b colorID, int8b red, int8b green, int8b blue);
+void defineColor (int8b colorID, color *colorValue);
 
 
 #endif

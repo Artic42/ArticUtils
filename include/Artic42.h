@@ -35,6 +35,13 @@ typedef struct {
     int8b sec;
 } dateTime;
 
+typedef struct {
+    int8b red;
+    int8b blue;
+    int8b green;
+    int8b opacity;
+} color;
+
 /************************************************
 *	Private Function Prtotype                   *
 ************************************************/
@@ -78,5 +85,7 @@ boolean dayIsEqual (dateTime date1, dateTime date2);
 //ColorFunctions
 int convertColorToPercent (int8b color);
 int8b convertColorTo255 (int color);
+color defineColorNoOpacity (int8b colorValues[3]);
+color defineColorWithOpacity (int8b colorValues[4]);
 
 #endif

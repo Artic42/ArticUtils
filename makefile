@@ -16,7 +16,7 @@ include make/TUI.make
 
 # All
 
-all: Artic42 hermes herald pythonLib thoth
+all: Artic42 hermes herald pythonLib thoth TUI
 
 # General
 

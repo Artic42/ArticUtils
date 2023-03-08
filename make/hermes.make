@@ -4,7 +4,6 @@ hermes_R: lib/c-cpp/hermes.lib
 hermes_D: lib/c-cpp/hermes_D.lib
 hermes_py: lib/python/hermes.py
 hermes: hermes_D hermes_R hermes_py
-	@cp src/hermes/hermes.h include/hermes.h
 hermesTest: src/hermes/hermesTest.app
 
 

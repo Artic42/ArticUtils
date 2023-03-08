@@ -3,7 +3,6 @@
 Artic42_R: lib/c-cpp/Artic42.lib
 Artic42_D: lib/c-cpp/Artic42_D.lib
 Artic42: Artic42_R Artic42_D
-	@cp src/Artic42/Artic42.h include/Artic42.h
 
 bin/CharacterFunctions.o: src/Artic42/CharacterFunctions.c
 	@$(CC) $(OFLAGSR) $(IPATH) src/Artic42/CharacterFunctions.c -o bin/CharacterFunctions.o

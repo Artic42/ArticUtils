@@ -5,7 +5,6 @@ thoth_D: lib/c-cpp/thoth_D.lib Artic42_D
 thoth_py: lib/python/thoth.py
 thoth_utils: lib/python/thothUtils.py
 thoth: thoth_D thoth_R thoth_py thoth_utils
-	@cp src/thoth/thoth.h include/thoth.h
 
 thothTest: src/thoth/thothTest.app thoth_D
 

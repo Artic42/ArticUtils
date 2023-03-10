@@ -36,22 +36,22 @@ int8b convertColorTo255 (int color)
     return result/1000;
 }
 
-color defineColorNoOpacity (int8b colorValues[3])
+color defineColorNoOpacity (int8b red, int8b green, int8b blue)
 {
     color result;
-    result.red = colorValues[1];
-    result.green = colorValues[2];
-    result.blue = colorValues[3];
+    result.red = red;
+    result.green = green;
+    result.blue = blue;
     result.opacity = 255;
     return result;
 }
 
-color defineColorWithOpacity (int8b colorValues[4])
+color defineColorWithOpacity (int8b red, int8b green, int8b blue, int8b opacity)
 {
     color result;
-    result.red = colorValues[1];
-    result.green = colorValues[2];
-    result.blue = colorValues[3];
-    result.opacity = colorValues[4];
+    result.red = red;
+    result.green = green;
+    result.blue = blue;
+    result.opacity = opacity;
     return result;
 }

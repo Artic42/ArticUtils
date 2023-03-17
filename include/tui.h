@@ -15,7 +15,7 @@
 *	Public Constants                    * 
 ****************************************/
 
-#define MAX_WIDTH 150
+#define MAX_WIDTH 300
 
 /****************************************
 *	Public Struct                       * 
@@ -37,6 +37,7 @@ void finishTUI (void);
 WINDOW *drawMainWindow (int width, int height, int color);
 WINDOW *drawSubWindow (WINDOW *parentWindow, int width, int height, int color, int posY, int posX);
 void writeBufferInWindow (WINDOW *window, int posY, int posX);
+void writeBuffereInLineCentered (WINDOW *window, int lineNumber);
 void setWindowColor (WINDOW *window, int color);
 void activateBoldInWindow (WINDOW *window);
 void deactivateBoldInWindow (WINDOW *window);

@@ -12,8 +12,10 @@ Description: This is a library to create text interfaces with ncurses.
 
 #include <Artic42.h>
 #include <ncurses.h>
+#include <string.h>
 
 #include "tui.h"
+
 
 
 
@@ -25,6 +27,7 @@ WINDOW *createWindowCentered (int width, int height);
 WINDOW *createSubWindow (WINDOW *origWindow, int height, int width, int posY, int posX);
 void drawWindowBorder (WINDOW *window);
 void fillWindow (WINDOW *window);
+int getWindowWidth (WINDOW *window);
 
 /****************************************
 *	Private Definitions	                *
@@ -56,7 +59,7 @@ void finishTUI (void)
 
 WINDOW *drawMainWindow (int width, int height, int color)
 {
-    WINDOW *window = createWindowCentered(height, width);
+    WINDOW *window = createWindowCentered( width,  height);
     wattr_set (window, A_BOLD, color, NULL);
     fillWindow (window);
     drawWindowBorder (window);
@@ -71,6 +74,20 @@ WINDOW *drawSubWindow (WINDOW *parentWindow, int width, int height, int color, i
     fillWindow (window);
     wrefresh (window);
     return window;
+}
+
+void writeBufferInWindow (WINDOW *window, int posY, int posX)
+{
+    mvwprintw (window, posY, posX, "%s", bufferTUI);
+    wrefresh (window);
+}
+
+void writeBuffereInLineCentered (WINDOW *window, int lineNumber)
+{
+    int windowWidth = getWindowWidth (window);
+    int bufferLength = strlen (bufferTUI);
+    int distance = (windowWidth - bufferLength)/2;
+    writeBufferInWindow (window, lineNumber, distance);
 }
 
 void defineColorPair (int8b pairID, int8b background, int8b foreground)
@@ -90,18 +107,13 @@ WINDOW *createWindowCentered (int width, int height)
 {
     long row, col;
     getmaxyx (stdscr, row, col);
-    return newwin (height, width, (row-height)/2, (col-width)/2);
+    WINDOW *result = newwin (height, width, (row-height)/2, (col-width)/2);
+    return result;
 }
 
 WINDOW *createSubWindow (WINDOW *origWindow, int height, int width, int posY, int posX)
 {
     return derwin (origWindow, height, width, posY, posX);
-}
-
-void writeBufferInWindow (WINDOW *window, int posY, int posX)
-{
-    mvwprintw (window, posX, posY, "%s", bufferTUI);
-    wrefresh (window);
 }
 
 void setWindowColor (WINDOW *window, int color)
@@ -137,3 +149,9 @@ void fillWindow (WINDOW *window)
     }
 }
 
+int getWindowWidth (WINDOW *window)
+{
+    int windowWidth, windowHeigth;
+    getmaxyx (window, windowHeigth, windowWidth);
+    return windowWidth;
+}

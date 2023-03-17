@@ -37,15 +37,15 @@ int main (void)
     defineColorPair(PAIR_1,COLOR_BLUE, COLOR_WHITE);
     defineColorPair(PAIR_2,COLOR_GREEN, COLOR_WHITE);
     defineColorPair(PAIR_3, COLOR_RED, COLOR_WHITE);
-    WINDOW *mainWindow = drawMainWindow(20, 20, PAIR_1);
-    WINDOW *subWindow = drawSubWindow (mainWindow, 10, 10, PAIR_2, 5, 5);
+    WINDOW *mainWindow = drawMainWindow(40, 40, PAIR_1);
+    WINDOW *subWindow = drawSubWindow (mainWindow, 20, 20, PAIR_2, 10, 10);
     setWindowColor (subWindow, PAIR_3);
     activateBoldInWindow (subWindow);
     sprintf (bufferTUI, "Hello, world!!!!!!");
-    writeBufferInWindow (subWindow, 0, 0);
+    writeBuffereInLineCentered (subWindow, 0);
     deactivateBoldInWindow (subWindow);
     sprintf (bufferTUI, "NOT BOLD");
     writeBufferInWindow (mainWindow, 1, 1);
-    sleep(60);
+    sleep(30);
     finishTUI();
 }

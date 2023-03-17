@@ -20,3 +20,7 @@ Library of python scripts useful for a lot of application necessary for all my p
 ## Thoth
 
 Logger apllication with utilities to later join multiple logs. Usable in C, python and ruby. More info in the folder of the project.
+
+## TUI
+
+Text user interface creation library, small library that simplifies using ncurses to create basic TUIs

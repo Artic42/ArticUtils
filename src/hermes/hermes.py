@@ -17,7 +17,7 @@ def int2file (path, value):
     thoth.addEntry (thoth.HERMES, f"Integer varaible written on {path} with value {value}")
     file = fileManagement.fileIO()
     file.openFile2Write (path)
-    file.addLine (str(value))
+    file.writeLine (str(value))
     file.closeFile ()
 
 def file2int (path):
@@ -32,7 +32,7 @@ def float2file (path, value):
     thoth.addEntry (thoth.HERMES, f"Floating point varaible written on {path} with value {value}")
     file = fileManagement.fileIO()
     file.openFile2Write (path)
-    file.addLine (str(value))
+    file.writeLine (str(value))
     file.closeFile ()
 
 def file2float (path):
@@ -47,7 +47,7 @@ def string2file (path, value):
     thoth.addEntry (thoth.HERMES, f"'{value}' written in {path}")
     file = fileManagement.fileIO()
     file.openFile2Write (path)
-    file.addLine (value)
+    file.writeLine (value)
     file.closeFile ()
 
 def file2string (path):

@@ -154,12 +154,12 @@ class log:
     def writeLog (self, path):
         file = fileManagement.fileIO()
         file.openFile2Write(path)
-        file.addLine(f"{self.name} - {self.date.createString()}")
+        file.writeLine(f"{self.name} - {self.date.createString()}")
         for entry in self.logEntries:
             if self.merged:
-                file.addLine(entry.createLineMerged())
+                file.writeLine(entry.createLineMerged())
             else:
-                file.addLine(entry.createLineNormal())
+                file.writeLine(entry.createLineNormal())
     
     def earliestEntryDate (self):
         return self.logEntries[0].date

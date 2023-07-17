@@ -89,11 +89,15 @@ class fileIO:
 
     def openFile2Read (self,path):
         self.FP = open (path, 'r')
+        readAllLines()
 
     def openFile2Append (self,path):
         self.FP = open (path, 'a')
 
-    def addLine (self, line):
+    def updateFile (self)
+        writeList(self.list)
+
+    def writeLine (self, line):
         self.FP.write (line + "\n")
         self.FP.flush()
 
@@ -108,18 +112,42 @@ class fileIO:
         self.closeFile
         
     def readAllLines (self):
-        lines = self.FP.readlines()
-        lines = [line[:-1] for line in lines]
-        return lines
+        self.lines = self.FP.readlines()
+        self.lines = [line[:-1] for line in lines]
+        return self.lines
     
     def readLine (self, lineNumber):
         return self.FP.readlines()[lineNumber][:-1]
+
+    def addLine (self, line)
+        self.lines.append(line)
+        
+    def setCursor (self, cursorPos)
+        self.cursor = cursorPos
+        
+    def addLineToCursor (self, line)
+        self.lines.insert(self.cursor, line)
+        self.cursor += 1
+
+    def replaceLineInCursor (self, line)
+        self.lines[self.cursor] = line
+        self.cursor += 1
+
 
     def readJson (self, path):
         self.openFile2Read(path)
         result = json.load(self.FP)
         self.closeFile
         return result
+    
+    def getLine(self, lineNumber):
+        return self.lines[lineNumber]
+    
+    def setLine(self, lineNumber, line):
+        self.lines[lineNumber] = line
+    
+    def howManyLines (self):
+        return length(self.lines)
 
     def closeFile (self):
         self.FP.close

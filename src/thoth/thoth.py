@@ -21,7 +21,7 @@ def addEntry (mask, message):
 
     for log in listOfLogs:
         if (log.mask & mask) != 0x0:
-            log.filePointer.addLine (line)
+            log.filePointer.writeLine (line)
             log.entriesOnFile = log.entriesOnFile + 1
             if log.entriesOnFile >= log.entryLimit:
                 log.entriesOnFile = 0
@@ -101,7 +101,7 @@ class log:
             file.openFile2Write(path)
             creationDate = date_time.createDate()
             creationDate.now()
-            file.addLine(f"{self.name} - {creationDate.createString()}")
+            file.writeLine(f"{self.name} - {creationDate.createString()}")
         else:
             file.openFile2Append(path)
         

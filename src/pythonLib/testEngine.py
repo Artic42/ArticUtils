@@ -3,9 +3,9 @@ import thoth
 
 def startTest():
     global env
-    env = enviroment()
+    env = environment()
 
-class enviroment:
+class environment:
     def __init__ (self):
         self.passed = True
         self.failed = False

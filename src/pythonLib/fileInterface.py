@@ -7,18 +7,17 @@ class FileInterface:
 
     def openFile2Read (self,path):
         self.FP = open (path, 'r')
-        readAllLines()
 
     def openFile2Append (self,path):
         self.FP = open (path, 'a')
-        
+
     def readAllLines (self):
-        self.lines = self.FP.readlines()
-        self.lines = [line[:-1] for line in lines]
-        return self.lines
+        lines = self.FP.readlines()
+        lines = [line[:-1] for line in lines]
+        return lines
     
     def readLine (self, lineNumber):
-        return readAllLines[lineNumber]
+        return self.readAllLines [lineNumber]
     
     def writeLine (self, line):
         self.FP.write (line + "\n")

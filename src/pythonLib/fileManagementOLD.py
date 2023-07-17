@@ -81,18 +81,9 @@ def filesInDirAreEqual (path1, path2):
     return True
 
 class fileIO:
-    def __init__ (self):
-        pass
     
-    def openFile2Write (self,path):
-        self.FP = open (path, 'w')
-
-    def openFile2Read (self,path):
-        self.FP = open (path, 'r')
-        readAllLines()
-
-    def openFile2Append (self,path):
-        self.FP = open (path, 'a')
+    
+    
 
     def updateFile (self)
         writeList(self.list)
@@ -149,5 +140,4 @@ class fileIO:
     def howManyLines (self):
         return length(self.lines)
 
-    def closeFile (self):
-        self.FP.close
+
